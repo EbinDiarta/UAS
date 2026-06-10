@@ -13,12 +13,12 @@ public class ibu : MonoBehaviour
             Intro.instance.Babak1_Kamar();
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    void Update()
     {
-        if (collision.CompareTag("Player"))
-        {
-        }
-    }
-    }
+    if (GameClock.instance.currentDay > 1){
 
+        sudahNgomong = true;
+    }
+    }
+}
 

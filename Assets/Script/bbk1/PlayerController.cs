@@ -56,6 +56,18 @@ public class PlayerController : MonoBehaviour
 
             PlayerPrefs.SetInt("MasukKamar", 0);
         }
+        else if (PlayerPrefs.GetInt("Babak", 0) == 1)
+        {
+            GameObject spawn = GameObject.Find("GantiBabak");
+
+            if (spawn != null)
+            {
+            
+                transform.position = spawn.transform.position + new Vector3(0, -0.2f, 0);
+            }
+
+            PlayerPrefs.SetInt("Babak", 0);
+        }
     }
 
 

@@ -4551,7 +4551,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 5fbbcb3fbe5e58442b43b58a49e44337, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4641,8 +4641,6 @@ MonoBehaviour:
   task: {fileID: 1078048377}
   text1: {fileID: 944303172}
   intro: {fileID: 944303174}
-  besar: {x: 1.2, y: 1.2, z: 1.2}
-  normal: {x: 1, y: 1, z: 1}
 --- !u!4 &1860923176
 Transform:
   m_ObjectHideFlags: 0
