@@ -1,0 +1,245 @@
+SOAL PILIHAN GANDA
+1. Array menyimpan elemennya di memori secara...
+A. Acak dan tersebar
+B. Berurutan dan bersebelahan
+C. Melingkar
+D. Terbalik
+Jawaban: B
+2. Pada Python dan banyak bahasa pemrograman modern, index array dimulai dari...
+A. 1
+B. -1
+C. 0
+D. 2
+Jawaban: C
+3. Apa prinsip kerja dari sebuah Static Array (Array Statis)?
+A. Ukurannya bisa berubah kapan saja
+B. Ukurannya tetap sejak dibuat
+C. Hanya menyimpan teks
+D. Tidak punya index
+Jawaban: B
+4. Apa keunggulan Binary Search dibandingkan Linear Search?
+A. Bisa dipakai di unsorted array
+B. Lebih mudah ditulis
+C. Jauh lebih cepat karena memangkas setengah data setiap langkah
+D. Tidak butuh index
+Jawaban: C
+5. Sorted Array (array terurut) sangat cocok digunakan ketika...
+A. Data sering dihapus
+B. Pencarian dilakukan lebih sering dari penambahan data
+C. Data tidak boleh diurutkan
+D. Array hanya berisi satu elemen
+Jawaban: B
+6. Contoh nyata struktur data Queue dalam kehidupan sehari-hari adalah...
+A. Tumpukan buku
+B. Antrian di kasir supermarket
+C. Lemari pakaian
+D. Papan tulis
+Jawaban: B
+7. Saat menghapus elemen dari Unsorted Array secara efisien, caranya adalah...
+A. Geser semua elemen ke kiri
+B. Buat array baru
+C. Tukar dengan elemen terakhir, lalu kurangi ukuran
+D. Isi dengan nilai 0
+Jawaban: C
+8. Perbedaan utama Linked List dibanding Array adalah...
+A. Linked list lebih cepat untuk semua operasi
+B. Linked list elemennya tidak harus disimpan berurutan di memori
+C. Array tidak bisa disortir
+D. Linked list hanya untuk angka
+Jawaban: B
+9. Dalam buku Grokking Data Structures, hubungan antara algoritma dan struktur data dianalogikan sebagai...
+A. Angka dan huruf
+B. Kata kerja dan kata benda
+C. Judul dan isi buku
+D. Fungsi dan variabel
+Jawaban: B
+10. Apa yang dimaksud dengan Stack dalam struktur data?
+A. FIFO — pertama masuk, pertama keluar
+B. LIFO — terakhir masuk, pertama keluar
+C. Urutan acak
+D. Berdasarkan prioritas
+Jawaban: B
+Soal 11 – 17: Stack, Queue & Call Stack
+
+11. Apa singkatan dari prinsip kerja Stack?
+A. FIFO (First In, First Out)
+B. LIFO (Last In, First Out)
+C. FILO (First In, Last Out)
+D. LILO (Last In, Last Out)
+Jawaban: B
+12. Operasi apa yang digunakan untuk MENAMBAH elemen ke atas Stack?
+A. pop()
+B. peek()
+C. push()
+D. is_empty()
+Jawaban: C
+13. Operasi apa yang digunakan untuk MENGHAPUS dan mengambil elemen teratas dari Stack?
+A. push()
+B. peek()
+C. size()
+D. pop()
+Jawaban: D
+14. Operasi peek() pada Stack berfungsi untuk...
+A. Menghapus elemen teratas
+B. Melihat elemen teratas TANPA menghapusnya
+C. Menambahkan elemen baru
+D. Mengosongkan seluruh stack
+Jawaban: B
+15. Apa singkatan dari prinsip kerja Queue (Antrian)?
+A. LIFO (Last In, First Out)
+B. LILO (Last In, Last Out)
+C. FIFO (First In, First Out)
+D. FIFI (First In, First Index)
+Jawaban: C
+16. Operasi apa yang digunakan untuk MENAMBAH elemen ke dalam Queue?
+A. dequeue()
+B. enqueue()
+C. pop()
+D. push()
+Jawaban: B
+17. Pada Queue, elemen ditambahkan di bagian... dan dihapus di bagian...
+A. FRONT — REAR
+B. REAR — REAR
+C. FRONT — FRONT
+D. REAR — FRONT
+Jawaban: D
+Soal 18 – 20: Abstract Data Type (ADT) Queue
+
+18. ADT (Abstract Data Type) berfokus pada...
+A. Cara data disimpan di memori
+B. Perilaku dan operasi yang bisa dilakukan
+C. Kecepatan prosesor
+D. Ukuran file program
+Jawaban: B
+19. Apa yang terjadi jika fungsi rekursif tidak memiliki base case?
+A. Program lebih cepat
+B. Stack otomatis kosong
+C. Terjadi Stack Overflow / RecursionError
+D. Fungsi berhenti di pemanggilan ke-10
+Jawaban: C
+20. Contoh penggunaan Stack pada komputer dalam kehidupan sehari-hari adalah...
+A. Antrian printer
+B. Penjadwalan CPU
+C. Fitur undo/redo
+D. Pengiriman email
+Jawaban: C
+21. Pop() pada stack kosong menyebabkan...
+A. Stack overflow
+B. Stack underflow
+C. Stack reset
+D. Tidak terjadi apa-apa
+Jawaban: B
+22. Kompleksitas waktu push() dan pop() pada Stack adalah...
+A. O(n)
+B. O(log n)
+C. O(1)
+D. O(n²)
+Jawaban: C
+23. Stack bisa diimplementasikan menggunakan...
+A. Array saja
+B. Linked List saja
+C. Array atau Linked List
+D. Queue saja
+Jawaban: C
+24. Stack [A, B, C, D] (D teratas) di-pop() dua kali, elemen teratas sekarang...
+A. A
+B. B
+C. C
+D. D
+Jawaban: B
+25. Antrian printer menggunakan struktur data...
+A. Stack
+B. Queue
+C. Tree
+D. Graph
+Jawaban: B
+26. Stack Overflow terjadi ketika...
+A. Stack kosong di-pop()
+B. Stack penuh di-push()
+C. peek() gagal
+D. Elemen bernilai nol
+Jawaban: B
+27. Fitur undo/redo pada text editor menggunakan konsep...
+A. Queue
+B. Stack
+C. Array
+D. Linked List
+Jawaban: B
+28. Operasi menghapus elemen dari Queue disebut...
+A. enqueue()
+B. push()
+C. dequeue()
+D. pop()
+Jawaban: C
+29. Elemen baru pada Queue selalu ditambahkan di bagian...
+A. FRONT
+B. REAR
+C. MIDDLE
+D. TOP
+Jawaban: B
+30. CPU Scheduling pada sistem operasi menggunakan...
+A. Stack
+B. Queue
+C. Array
+D. Tree
+Jawaban: B
+31. Circular Queue dirancang untuk...
+A. Mempercepat push()
+B. Memanfaatkan ruang array yang sudah kosong
+C. Mengganti FIFO ke LIFO
+D. Menyimpan data duplikat
+Jawaban: B
+32. Priority Queue mengeluarkan elemen berdasarkan...
+A. Urutan masuk
+B. Nilai prioritas
+C. Ukuran data
+D. Urutan abjad
+Jawaban: B
+33. Queue [10, 20, 30] (10 di FRONT), lalu dequeue() dijalankan. Isi Queue menjadi...
+A. [20, 30]
+B. [10, 20]
+C. [10, 30]
+D. [30, 20, 10]
+Jawaban: A
+34. Kondisi Queue kosong disebut...
+A. Overflow
+B. Underflow
+C. Full
+D. Reset
+Jawaban: B
+35. Node pada Singly Linked List berisi...
+A. Data saja
+B. Pointer saja
+C. Data + 1 pointer next
+D. Data + 2 pointer
+Jawaban: C
+36. Pointer next pada node terakhir Singly Linked List bernilai...
+A. 0
+B. 1
+C. NULL / None
+D. Head
+Jawaban: C
+37. Doubly Linked List memiliki berapa pointer per node?
+A. 1
+B. 2
+C. 3
+D. 4
+Jawaban: B
+38. Kelemahan utama Linked List dibanding Array adalah...
+A. Ukurannya tetap
+B. Tidak bisa random access
+C. Tidak bisa ditambah elemen
+D. Lebih lambat di push()
+Jawaban: B
+39. Menambah elemen di HEAD Linked List memiliki kompleksitas...
+A. O(n)
+B. O(n²)
+C. O(log n)
+D. O(1)
+Jawaban: D
+40. Pada Circular Linked List, pointer next node terakhir menunjuk ke...
+A. NULL
+B. Node ke-2
+C. Node pertama (head)
+D. Dirinya sendiri
+Jawaban: C
