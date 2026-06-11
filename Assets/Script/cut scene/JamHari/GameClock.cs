@@ -1,6 +1,5 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement;
 
 public class GameClock : MonoBehaviour
 {
@@ -10,14 +9,15 @@ public class GameClock : MonoBehaviour
     public TextMeshProUGUI dayText;
     public TextMeshProUGUI clockText;
 
-    [Header("Time")]
+    [Header("Waktu Awal")]
     public int hour = 7;
     public int minute = 0;
+
+    [Header("Kecepatan Waktu")]
     public float realSecondsPerMinute = 0.5f;
 
     private float timer;
 
-    [Header("Progress")]
     public int currentDay = 0;
 
     public string[] days =
@@ -31,11 +31,12 @@ public class GameClock : MonoBehaviour
 
     void Awake()
     {
-        if (instance == null)
+        // Singleton
+        if(instance == null)
         {
             instance = this;
+
             DontDestroyOnLoad(gameObject);
-            LoadData();
         }
         else
         {
@@ -47,7 +48,7 @@ public class GameClock : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer >= realSecondsPerMinute)
+        if(timer >= realSecondsPerMinute)
         {
             timer = 0;
             AddMinute();
@@ -60,13 +61,13 @@ public class GameClock : MonoBehaviour
     {
         minute++;
 
-        if (minute >= 60)
+        if(minute >= 60)
         {
             minute = 0;
             hour++;
         }
 
-        if (hour >= 24)
+        if(hour >= 24)
         {
             hour = 0;
             NextDay();
@@ -77,28 +78,18 @@ public class GameClock : MonoBehaviour
     {
         currentDay++;
 
-        if (currentDay >= days.Length)
+        if(currentDay >= days.Length)
         {
-            Time.timeScale = 0;
-            Debug.Log("GAME TAMAT");
-            return;
+            currentDay = 0;
         }
-
-        SaveData();
-
-        // 🔥 Set spawn ke awal map
-        PlayerPrefs.SetString("SpawnPoint", "SpawnAwal");
-
-        // 🔥 Reload scene (reset dunia)
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void UpdateUI()
     {
-        if (dayText != null)
+        if(dayText != null)
             dayText.text = days[currentDay];
 
-        if (clockText != null)
+        if(clockText != null)
             clockText.text =
                 hour.ToString("00") + ":" +
                 minute.ToString("00");
@@ -108,26 +99,16 @@ public class GameClock : MonoBehaviour
     {
         hour = 6;
         minute = 0;
+
         NextDay();
+
+        UpdateUI();
+
+        Debug.Log("Tidur...");
     }
 
-    void SaveData()
+    public string GetDay()
     {
-        PlayerPrefs.SetInt("Day", currentDay);
-        PlayerPrefs.SetInt("Hour", hour);
-        PlayerPrefs.SetInt("Minute", minute);
-        PlayerPrefs.Save();
-    }
-
-    void LoadData()
-    {
-        currentDay = PlayerPrefs.GetInt("Day", 0);
-        hour = PlayerPrefs.GetInt("Hour", 7);
-        minute = PlayerPrefs.GetInt("Minute", 0);
-    }
-
-    public int GetDayIndex()
-    {
-        return currentDay;
+        return days[currentDay];
     }
 }

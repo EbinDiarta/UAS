@@ -1,24 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ibu : MonoBehaviour
 {
     private bool sudahNgomong = false;
-        private void OnTriggerEnter2D(Collider2D other)
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && !sudahNgomong)
+        if (other.CompareTag("Player") &&
+            !sudahNgomong &&
+            GameClock.instance != null &&
+            GameClock.instance.currentDay == 0)
         {
             sudahNgomong = true;
             Intro.instance.Babak1_Kamar();
         }
     }
-    void Update()
-    {
-    if (GameClock.instance.currentDay > 1){
-
-        sudahNgomong = true;
-    }
-    }
 }
-

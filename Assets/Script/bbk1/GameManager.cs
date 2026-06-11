@@ -45,14 +45,19 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneData.rumah);
     }
     public void masuk_kamar()
+{
+    if (Sound.instance != null)
     {
-        if (Sound.instance != null)
-        {
-            Sound.instance.PlaySFX(Sound.instance.tab);
-        }
-        PlayerPrefs.SetInt("MasukKamar", 1);
-        SceneManager.LoadScene(SceneData.game1);
+        Sound.instance.PlaySFX(Sound.instance.tab);
     }
+    
+    PlayerPrefs.DeleteKey("useSpawn");
+    PlayerPrefs.DeleteKey("KeluarKelas");
+
+    PlayerPrefs.SetInt("MasukKamar", 1);
+
+    SceneManager.LoadScene(SceneData.game1);
+}
     public void halaman()
 {
     if (Sound.instance != null)

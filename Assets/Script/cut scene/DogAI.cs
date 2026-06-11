@@ -4,19 +4,17 @@ public class DogAI : MonoBehaviour
 {
     public Transform player;
 
-    [Header("Jarak")]
     public float jarakDeteksi = 5f;
     public float jarakBerhenti = 7f;
 
-    [Header("Speed")]
     public float speed = 3f;
 
-    [Header("Timer Kejar")]
     public float waktuTrigger = 5f;
 
-    [Header("Area Patrol")]
     public Transform titikA;
     public Transform titikB;
+
+    public int aktifMulaiHari = 1;
 
     private bool mengejar = false;
     private float timerKejar = 0f;
@@ -31,15 +29,18 @@ public class DogAI : MonoBehaviour
 
     void Update()
     {
+        if (GameClock.instance == null || GameClock.instance.currentDay < aktifMulaiHari)
+        {
+            return;
+        }
+
         float jarak = Vector2.Distance(transform.position, player.position);
 
-        // START CHASE
-        if (jarak < jarakDeteksi)
+        if (jarak <= jarakDeteksi)
         {
             mengejar = true;
         }
 
-        // STOP CHASE
         if (jarak > jarakBerhenti)
         {
             mengejar = false;
@@ -57,18 +58,12 @@ public class DogAI : MonoBehaviour
         }
     }
 
-    // =========================
-    // CHASE
-    // =========================
     void KejarPlayer()
     {
         Vector2 arah = (player.position - transform.position).normalized;
         transform.position += (Vector3)arah * speed * Time.deltaTime;
     }
 
-    // =========================
-    // PATROL (BOLAK-BALIK)
-    // =========================
     void Patrol()
     {
         transform.position = Vector2.MoveTowards(
@@ -77,7 +72,6 @@ public class DogAI : MonoBehaviour
             speed * Time.deltaTime
         );
 
-        // kalau sampai titik → pindah target
         if (Vector2.Distance(transform.position, targetPatrol) < 0.2f)
         {
             if (targetPatrol == titikA.position)
@@ -87,9 +81,6 @@ public class DogAI : MonoBehaviour
         }
     }
 
-    // =========================
-    // TIMER
-    // =========================
     void HitungTimer()
     {
         if (sudahTrigger) return;
@@ -111,10 +102,7 @@ public class DogAI : MonoBehaviour
 
     void TriggerEvent()
     {
-        Debug.Log("Dikejar terlalu lama!");
-
         Intro.instance.Babak2_SetelahAnjing();
-
         mengejar = false;
     }
 }
