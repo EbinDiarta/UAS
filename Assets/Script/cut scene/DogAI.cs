@@ -22,9 +22,12 @@ public class DogAI : MonoBehaviour
 
     private Vector3 targetPatrol;
 
+    private SpriteRenderer sr;
+
     void Start()
     {
         targetPatrol = titikA.position;
+        sr = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -61,11 +64,18 @@ public class DogAI : MonoBehaviour
     void KejarPlayer()
     {
         Vector2 arah = (player.position - transform.position).normalized;
+
+        Flip(arah);
+
         transform.position += (Vector3)arah * speed * Time.deltaTime;
     }
 
     void Patrol()
     {
+        Vector2 arah = (targetPatrol - transform.position).normalized;
+
+        Flip(arah);
+
         transform.position = Vector2.MoveTowards(
             transform.position,
             targetPatrol,
@@ -79,6 +89,16 @@ public class DogAI : MonoBehaviour
             else
                 targetPatrol = titikA.position;
         }
+    }
+
+    void Flip(Vector2 arah)
+    {
+        if (sr == null) return;
+
+        if (arah.x > 0)
+            sr.flipX = false;
+        else if (arah.x < 0)
+            sr.flipX = true;
     }
 
     void HitungTimer()

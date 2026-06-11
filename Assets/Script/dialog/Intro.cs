@@ -56,12 +56,16 @@ string[] babak2_kamar =
 
 string[] babak2_setelah_anjing =
 {
-    "Pak Aris: Hahaha, dikejar anjing ya, Nak?",
+    "Pak Aris: Mau kesekolah nak?",
     "Arik: Iya, Pak... Bapak lagi istirahat?",
     "Pak Aris: Iya, cape udah nyapu dari subuh, tapi sejam lagi balik berantakan lagi. Ngapain juga gue nyapu.",
     "Arik: Kok bisa gitu, Pak?",
     "Pak Aris: Orang buang sampah sembarangan terus.",
-    "Arik: ... (merenung)"
+    "Arik: ... (merenung)",
+    "Pak Aris: Ya udah, kamu hati-hati lewat disana",
+    "Arik: Emang kenapa pak?.",
+    "Pak Aris: Anjing saya suka ngejar anak-anak yang lewat situ.",
+    "Arik: Baik lah, Pak... (lega)"
 };
 
 string[] babak2_sekolah =
