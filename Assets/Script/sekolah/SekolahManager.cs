@@ -5,8 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SekolahManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public void pulang()
+        public void pulang()
     {
         if (Sound.instance != null)
         {

@@ -70,10 +70,13 @@ public class GameClock : MonoBehaviour
         if(hour >= 24)
         {
             hour = 0;
-            NextDay();
         }
     }
 
+    public void gantibbk()
+    {
+        NextDay();
+    }
     void NextDay()
     {
         currentDay++;

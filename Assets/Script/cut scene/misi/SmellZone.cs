@@ -8,7 +8,7 @@ public class SmellZone : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             if (GameClock.instance != null &&
-    GameClock.instance.currentDay >= 2)
+    GameClock.instance.currentDay >= 1)
 {
     HoldBreathManager.instance.StartHoldBreath();
 }

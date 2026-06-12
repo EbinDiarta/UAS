@@ -5,13 +5,20 @@ public class HoldBreathManager : MonoBehaviour
 {
     public static HoldBreathManager instance;
 
+    public Transform mc;
+    public Transform tujuan;
+
     public GameObject panel;
     public Slider breathBar;
 
     float breath = 100f;
     bool activeGame;
 
+    float surviveTime;
+    public float targetTime = 120f;
+
     public bool hasVomited;
+
     private void Awake()
     {
         instance = this;
@@ -22,9 +29,16 @@ public class HoldBreathManager : MonoBehaviour
     {
         if (!activeGame) return;
 
+        surviveTime += Time.deltaTime;
+
         breath -= 15f * Time.deltaTime;
 
         breathBar.value = breath;
+
+        if (surviveTime >= targetTime)
+        {
+            Win();
+        }
 
         if (breath <= 0)
         {
@@ -37,6 +51,7 @@ public class HoldBreathManager : MonoBehaviour
         panel.SetActive(true);
 
         breath = 100;
+        surviveTime = 0;
 
         breathBar.maxValue = 100;
         breathBar.value = 100;
@@ -60,12 +75,22 @@ public class HoldBreathManager : MonoBehaviour
         panel.SetActive(false);
     }
 
+    void Win()
+    {
+        activeGame = false;
+        panel.SetActive(false);
+
+        Debug.Log("Berhasil menahan napas selama 2 menit!");
+    }
+
     void Fail()
     {
         activeGame = false;
         panel.SetActive(false);
 
         hasVomited = true;
+
+        mc.position = tujuan.position;
 
         Debug.Log("Muntah");
     }
