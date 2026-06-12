@@ -17,7 +17,7 @@ public class DogAI : MonoBehaviour
     public Transform titikB;
 
     [Header("Game Progress")]
-    public int aktifMulaiHari = 2;
+    public int aktifMulaiHari = 1;
 
     private bool mengejar = false;
     private Vector3 targetPatrol;
@@ -37,11 +37,10 @@ public class DogAI : MonoBehaviour
     {
         // Belum mencapai babak yang ditentukan
         if (GameClock.instance == null ||
-            GameClock.instance.currentDay < aktifMulaiHari)
-        {
-            Patrol();
-            return;
-        }
+    GameClock.instance.currentDay < aktifMulaiHari)
+{
+    return;
+}
 
         // Jika player belum diisi
         if (player == null)
