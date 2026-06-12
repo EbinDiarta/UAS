@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4521569446174535715}
   - component: {fileID: 8607431793031359725}
   - component: {fileID: 6074737350615302381}
+  - component: {fileID: -3269325779049798525}
   m_Layer: 0
   m_Name: Sampah3 (27)
   m_TagString: Trash
@@ -172,3 +173,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5913213, y: 0.54596555}
   m_EdgeRadius: 0
+--- !u!114 &-3269325779049798525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2603344318030708945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8042514a7989c544945d6d12f854918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0

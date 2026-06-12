@@ -81,7 +81,7 @@ string[] babak2_sekolah =
 // =======================
 string[] babak3_awal =
 {
-    "Arik: Aduh, jalan ditutup. Terpaksa lewat pasar."
+    "Arik: Aduh, ada anjing liar. Terpaksa lewat pasar."
 };
 
 string[] babak3_berhasil =

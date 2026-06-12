@@ -10,9 +10,17 @@ public class QuizManager : MonoBehaviour
     public GameObject quizPanel;
     public Image dragTrashImage;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI timerText;
     public Transform startPoint;
 
+    [Header("Timer")]
+    public float maxTime = 5f;
+    private float currentTime;
+    private bool isTiming = false;
+
     private int score = 0;
+
+    private DragTrash currentDrag;
 
     private void Awake()
     {
@@ -25,83 +33,98 @@ public class QuizManager : MonoBehaviour
         UpdateScore();
     }
 
+    private void Update()
+    {
+        if (isTiming)
+        {
+            currentTime -= Time.deltaTime;
+
+            timerText.text = "Waktu: " + Mathf.Ceil(currentTime);
+
+            if (currentTime <= 0)
+            {
+                TimeUp();
+            }
+        }
+    }
+
     public void OpenQuiz(Trash trash)
     {
-        DragTrash drag =
-            dragTrashImage.GetComponent<DragTrash>();
+        DragTrash drag = dragTrashImage.GetComponent<DragTrash>();
+
+        currentDrag = drag;
 
         drag.currentTrash = trash;
         drag.trashType = trash.jenisSampah;
 
-        // Reset posisi sampah UI
-        drag.transform.position =
-            startPoint.position;
+        drag.transform.position = startPoint.position;
 
-        // Aktifkan raycast lagi
-        CanvasGroup cg =
-            drag.GetComponent<CanvasGroup>();
-
+        CanvasGroup cg = drag.GetComponent<CanvasGroup>();
         if (cg != null)
         {
             cg.blocksRaycasts = true;
         }
 
-        // Ambil sprite sampah asli
-        SpriteRenderer sr =
-            trash.GetComponent<SpriteRenderer>();
-
+        SpriteRenderer sr = trash.GetComponent<SpriteRenderer>();
         dragTrashImage.sprite = sr.sprite;
 
         quizPanel.SetActive(true);
+
+        StartTimer();
     }
 
-    public void CheckDrop(
-        DragTrash dragTrash,
-        Trash.TrashType selectedBin)
+
+    void StartTimer()
     {
-        Debug.Log("Jenis Sampah : " +
-            dragTrash.trashType);
+        currentTime = maxTime;
+        isTiming = true;
+    }
 
-        Debug.Log("Tong Dipilih : " +
-            selectedBin);
+    void StopTimer()
+    {
+        isTiming = false;
+    }
 
-        // JAWABAN BENAR
+    void TimeUp()
+    {
+        Debug.Log("WAKTU HABIS!");
+        StopTimer();
+        ResetAfterAnswer();
+    }
+
+    public void CheckDrop(DragTrash dragTrash, Trash.TrashType selectedBin)
+    {
+        StopTimer();
+
         if (dragTrash.trashType == selectedBin)
         {
             Debug.Log("BENAR");
-
             score += 10;
         }
-        // JAWABAN SALAH
         else
         {
             Debug.Log("SALAH");
-
-            // Optional
-            // score -= 5;
         }
 
         UpdateScore();
 
-        // Hapus sampah di dunia
-        if (dragTrash.currentTrash != null)
+        ResetAfterAnswer();
+    }
+    void ResetAfterAnswer()
+    {
+        if (currentDrag != null && currentDrag.currentTrash != null)
         {
-            Destroy(
-                dragTrash.currentTrash.gameObject
-            );
+            Destroy(currentDrag.currentTrash.gameObject);
         }
 
-        // Reset posisi UI
-        dragTrash.transform.position =
-            startPoint.position;
+        if (currentDrag != null)
+        {
+            currentDrag.transform.position = startPoint.position;
+            currentDrag.currentTrash = null;
+        }
 
-        // Tutup panel
         quizPanel.SetActive(false);
-
-        // Bersihkan referensi
-        dragTrash.currentTrash = null;
     }
-
     void UpdateScore()
     {
         scoreText.text = "Poin : " + score;

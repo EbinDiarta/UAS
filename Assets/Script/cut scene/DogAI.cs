@@ -2,58 +2,71 @@ using UnityEngine;
 
 public class DogAI : MonoBehaviour
 {
+    [Header("Target")]
     public Transform player;
 
+    [Header("Detection")]
     public float jarakDeteksi = 5f;
     public float jarakBerhenti = 7f;
 
+    [Header("Movement")]
     public float speed = 3f;
 
-    public float waktuTrigger = 5f;
-
+    [Header("Patrol Points")]
     public Transform titikA;
     public Transform titikB;
 
-    public int aktifMulaiHari = 1;
+    [Header("Game Progress")]
+    public int aktifMulaiHari = 2;
 
     private bool mengejar = false;
-    private float timerKejar = 0f;
-    private bool sudahTrigger = false;
-
     private Vector3 targetPatrol;
-
     private SpriteRenderer sr;
 
-    void Start()
+    private void Start()
     {
-        targetPatrol = titikA.position;
         sr = GetComponent<SpriteRenderer>();
+
+        if (titikA != null)
+        {
+            targetPatrol = titikA.position;
+        }
     }
 
-    void Update()
+    private void Update()
     {
-        if (GameClock.instance == null || GameClock.instance.currentDay < aktifMulaiHari)
+        // Belum mencapai babak yang ditentukan
+        if (GameClock.instance == null ||
+            GameClock.instance.currentDay < aktifMulaiHari)
         {
+            Patrol();
             return;
         }
 
-        float jarak = Vector2.Distance(transform.position, player.position);
+        // Jika player belum diisi
+        if (player == null)
+            return;
 
+        float jarak = Vector2.Distance(
+            transform.position,
+            player.position
+        );
+
+        // Mulai mengejar
         if (jarak <= jarakDeteksi)
         {
             mengejar = true;
         }
 
+        // Berhenti mengejar dan kembali patrol
         if (jarak > jarakBerhenti)
         {
             mengejar = false;
-            ResetTimer();
         }
 
         if (mengejar)
         {
             KejarPlayer();
-            HitungTimer();
         }
         else
         {
@@ -61,18 +74,24 @@ public class DogAI : MonoBehaviour
         }
     }
 
-    void KejarPlayer()
+    private void KejarPlayer()
     {
-        Vector2 arah = (player.position - transform.position).normalized;
+        Vector2 arah =
+            (player.position - transform.position).normalized;
 
         Flip(arah);
 
-        transform.position += (Vector3)arah * speed * Time.deltaTime;
+        transform.position +=
+            (Vector3)arah * speed * Time.deltaTime;
     }
 
-    void Patrol()
+    private void Patrol()
     {
-        Vector2 arah = (targetPatrol - transform.position).normalized;
+        if (titikA == null || titikB == null)
+            return;
+
+        Vector2 arah =
+            (targetPatrol - transform.position).normalized;
 
         Flip(arah);
 
@@ -82,47 +101,33 @@ public class DogAI : MonoBehaviour
             speed * Time.deltaTime
         );
 
-        if (Vector2.Distance(transform.position, targetPatrol) < 0.2f)
+        if (Vector2.Distance(
+            transform.position,
+            targetPatrol) < 0.2f)
         {
             if (targetPatrol == titikA.position)
+            {
                 targetPatrol = titikB.position;
+            }
             else
+            {
                 targetPatrol = titikA.position;
+            }
         }
     }
 
-    void Flip(Vector2 arah)
+    private void Flip(Vector2 arah)
     {
-        if (sr == null) return;
+        if (sr == null)
+            return;
 
         if (arah.x > 0)
-            sr.flipX = false;
-        else if (arah.x < 0)
-            sr.flipX = true;
-    }
-
-    void HitungTimer()
-    {
-        if (sudahTrigger) return;
-
-        timerKejar += Time.deltaTime;
-
-        if (timerKejar >= waktuTrigger)
         {
-            sudahTrigger = true;
-            TriggerEvent();
+            sr.flipX = false;
         }
-    }
-
-    void ResetTimer()
-    {
-        timerKejar = 0f;
-        sudahTrigger = false;
-    }
-
-    void TriggerEvent()
-    {
-        Intro.instance.Babak2_SetelahAnjing();
-        mengejar = false;
+        else if (arah.x < 0)
+        {
+            sr.flipX = true;
+        }
     }
 }
