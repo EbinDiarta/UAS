@@ -79,7 +79,7 @@ public class HoldBreathManager : MonoBehaviour
     {
         activeGame = false;
         panel.SetActive(false);
-
+        Intro.instance.Babak2_SetelahTahanBau();
         Debug.Log("Berhasil menahan napas selama 2 menit!");
     }
 

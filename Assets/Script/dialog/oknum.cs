@@ -21,7 +21,7 @@ public class oknum : MonoBehaviour
     {
         if (GameClock.instance == null) return;
 
-        bool shouldActive = GameClock.instance.currentDay >= 1;
+        bool shouldActive = GameClock.instance.currentDay == 0;
 
         if (shouldActive != statusAktif)
         {
@@ -32,7 +32,10 @@ public class oknum : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && !sudahNgomong)
+        if (other.CompareTag("Player") &&
+            !sudahNgomong &&
+            GameClock.instance != null &&
+            GameClock.instance.currentDay == 0)
         {
             sudahNgomong = true;
             Intro.instance.Babak1_Jalan();

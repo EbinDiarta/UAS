@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 899f1106fb2aa0540b651a61ec97917b
+guid: 3c6b79b3afe9bc34c8622b793df11994
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ibu MC_0
+      name: Aya Sahabat MC_0
       rect:
         serializedVersion: 2
-        x: 249
-        y: 592
-        width: 139
-        height: 504
+        x: 273
+        y: 564
+        width: 120
+        height: 438
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5d01700ba878d747afbc365f8342081
-      internalID: -1492159684
+      spriteID: 80c3cd37201b64d419498bfa7bb45080
+      internalID: -1698624928
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ibu MC_1
+      name: Aya Sahabat MC_1
       rect:
         serializedVersion: 2
-        x: 450
-        y: 601
-        width: 135
-        height: 497
+        x: 456
+        y: 565
+        width: 120
+        height: 438
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d730181311e285740831642151cb3f45
-      internalID: -472853603
+      spriteID: b4329fb37a57dad44bcbb29891081d26
+      internalID: 2088349013
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ibu MC_2
+      name: Aya Sahabat MC_2
       rect:
         serializedVersion: 2
-        x: 631
-        y: 623
-        width: 106
-        height: 476
+        x: 642
+        y: 565
+        width: 119
+        height: 440
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c18e5573769d9a24788f56475e41d7e3
-      internalID: 1283962125
+      spriteID: 9daf0d07ea55cef459ceef32151b4ea9
+      internalID: 548476835
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ibu MC_3
+      name: Aya Sahabat MC_3
       rect:
         serializedVersion: 2
-        x: 786
-        y: 623
-        width: 133
-        height: 478
+        x: 825
+        y: 564
+        width: 118
+        height: 439
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c504a6fad40fed940999e1d8aaef18b7
-      internalID: -1586405773
+      spriteID: d511f59f9638f024ea71e1cbaa0dab18
+      internalID: 566048524
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ibu MC_4
+      name: Aya Sahabat MC_4
       rect:
         serializedVersion: 2
-        x: 985
-        y: 623
-        width: 126
-        height: 476
+        x: 1009
+        y: 565
+        width: 119
+        height: 439
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c665b8236a96a854983a055becd21621
-      internalID: 1408881809
+      spriteID: f066dc3daed23534fa08301ac71a69b1
+      internalID: 276248334
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ibu MC_5
+      name: Aya Sahabat MC_5
       rect:
         serializedVersion: 2
-        x: 1180
-        y: 622
-        width: 111
-        height: 477
+        x: 1188
+        y: 565
+        width: 123
+        height: 439
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,20 +242,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9e76c322c569fd40bc60de029ab8770
-      internalID: -798556911
+      spriteID: 597e077ce5b6d96439500910a818f4f6
+      internalID: -683590822
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ibu MC_6
+      name: Aya Sahabat MC_6
       rect:
         serializedVersion: 2
-        x: 126
-        y: 488
-        width: 5
-        height: 6
+        x: 548
+        y: 544
+        width: 4
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,20 +263,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fff01181cf627e54ebfcd73e97660dbe
-      internalID: -220707424
+      spriteID: 13d543de860913c4cb92eb2260e3f44c
+      internalID: 700241999
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ibu MC_7
+      name: Aya Sahabat MC_7
       rect:
         serializedVersion: 2
-        x: 43
-        y: 183
-        width: 153
-        height: 299
+        x: 52
+        y: 145
+        width: 167
+        height: 286
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,20 +284,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30b03f52b2961a9469a3b0baaacfd423
-      internalID: -794218584
+      spriteID: e0d74da6f9089b84aa89c0283a63dc76
+      internalID: -1457193968
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ibu MC_8
+      name: Aya Sahabat MC_8
       rect:
         serializedVersion: 2
-        x: 217
-        y: 183
-        width: 154
-        height: 298
+        x: 253
+        y: 145
+        width: 159
+        height: 287
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -305,20 +305,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c88b902fdae1f2040b066a29967a7ced
-      internalID: -1216812672
+      spriteID: 5f9e98f529f4e274bb84eb5d8af6c202
+      internalID: -869196124
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ibu MC_9
+      name: Aya Sahabat MC_9
       rect:
         serializedVersion: 2
-        x: 386
-        y: 183
-        width: 153
-        height: 299
+        x: 416
+        y: 144
+        width: 161
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -326,20 +326,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 883161dd95ff10149a26d4934fc5f649
-      internalID: 2115800624
+      spriteID: 9f2493edd83b36f46951b75a3664a0b7
+      internalID: -180945179
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ibu MC_10
+      name: Aya Sahabat MC_10
       rect:
         serializedVersion: 2
-        x: 549
-        y: 183
-        width: 153
-        height: 299
+        x: 588
+        y: 145
+        width: 159
+        height: 287
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -347,83 +347,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 850a119a07e44444aa4d5740f0765de7
-      internalID: 672835029
+      spriteID: 5cc7131f074acde42b305b302dd38f65
+      internalID: 9437585
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ibu MC_11
+      name: Aya Sahabat MC_11
       rect:
         serializedVersion: 2
-        x: 719
-        y: 183
-        width: 155
-        height: 299
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 04684b325b1ce37449b5c3e956ea1219
-      internalID: -685612348
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ibu MC_12
-      rect:
-        serializedVersion: 2
-        x: 878
-        y: 183
-        width: 149
-        height: 300
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4536adc9319b44e45a251e690a112791
-      internalID: -1805492906
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ibu MC_13
-      rect:
-        serializedVersion: 2
-        x: 1037
-        y: 183
-        width: 154
-        height: 299
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e985f7323f6bba346806e0840ffb6ac7
-      internalID: -107653765
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ibu MC_14
-      rect:
-        serializedVersion: 2
-        x: 1195
-        y: 183
+        x: 764
+        y: 145
         width: 151
-        height: 299
+        height: 287
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -431,8 +368,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b378da6455f161c47912c7360641f134
-      internalID: 316717009
+      spriteID: 69fdc8c0f0e6b07449debc9f9ac85e7e
+      internalID: 1058869660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aya Sahabat MC_12
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 145
+        width: 163
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6914202d78597146a4b3fc28988e2b9
+      internalID: -286189769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aya Sahabat MC_13
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 144
+        width: 161
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0afdb6cdbc9316a4e83b85c4c3c4e042
+      internalID: 1393512913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aya Sahabat MC_14
+      rect:
+        serializedVersion: 2
+        x: 1309
+        y: 145
+        width: 156
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d78bc0717c77e3c4cb233a6ab4e586ca
+      internalID: -1430353479
       vertices: []
       indices: 
       edges: []
@@ -448,21 +448,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Ibu MC_0: -1492159684
-      Ibu MC_1: -472853603
-      Ibu MC_10: 672835029
-      Ibu MC_11: -685612348
-      Ibu MC_12: -1805492906
-      Ibu MC_13: -107653765
-      Ibu MC_14: 316717009
-      Ibu MC_2: 1283962125
-      Ibu MC_3: -1586405773
-      Ibu MC_4: 1408881809
-      Ibu MC_5: -798556911
-      Ibu MC_6: -220707424
-      Ibu MC_7: -794218584
-      Ibu MC_8: -1216812672
-      Ibu MC_9: 2115800624
+      Aya Sahabat MC_0: -1698624928
+      Aya Sahabat MC_1: 2088349013
+      Aya Sahabat MC_10: 9437585
+      Aya Sahabat MC_11: 1058869660
+      Aya Sahabat MC_12: -286189769
+      Aya Sahabat MC_13: 1393512913
+      Aya Sahabat MC_14: -1430353479
+      Aya Sahabat MC_2: 548476835
+      Aya Sahabat MC_3: 566048524
+      Aya Sahabat MC_4: 276248334
+      Aya Sahabat MC_5: -683590822
+      Aya Sahabat MC_6: 700241999
+      Aya Sahabat MC_7: -1457193968
+      Aya Sahabat MC_8: -869196124
+      Aya Sahabat MC_9: -180945179
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

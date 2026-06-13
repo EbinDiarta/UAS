@@ -124,10 +124,10 @@ string[] babak4_rencana =
 string[] babak4_warga =
 {
     "Arik: Permisi Bu, mau ngomong soal sampah di kali.",
-    "Bu Tini: Anak-anak ngapain ngurusin sampah?",
-    "Reza: Ini penting, Bu.",
-    "Nisa: Ini datanya, Bu.",
-    "Bu Ratna: Wah... beda banget ya.",
+    "Pak Rizky: Anak-anak ngapain ngurusin sampah?",
+    "Arik: Ini penting, Bu.",
+    "Arik: Ini datanya, Bu.",
+    "Pak Rizky: Wah... beda banget ya.",
     "Arik: Kita mau minta Pak RT gerak."
 };
 
@@ -137,21 +137,27 @@ string[] babak4_pakrt =
     "Pak RT: Ada apa?",
     "Arik: Kali makin parah, Pak.",
     "Pak RT: Bukan sekarang waktunya!",
-    "Reza: Tapi kalau nunggu terus?",
+    "Arik: Tapi kalau nunggu terus?",
     "Pak RT: Kalian anak-anak jangan ngatur!",
     "Arik: Pak, kami cuma—",
-    "Pak RT: Sudah! Pulang!"
+    "Pak RT: Sudah! Pergi!"
 };
 
 // =======================
 // BABAK 5
 // =======================
-string[] babak5_awal =
+string[] babak5_OjolDiPasar =
 {
-    "Pak RT: Udah! Jangan ganggu urusan Bapak!",
-    "Arik: Bu... di TV ada apa?",
-    "Ibu: Katanya hujan deras datang.",
-    "Arik: Kalau kali mampet..."
+    "Arik: Bang, kok pasar sepi ya hari ini?",
+    "Ojol: Iya, Dik. Dari tadi orang-orang pada buru-buru pulang.",
+    "Arik: Memangnya ada apa?",
+    "Ojol: Katanya hujan besar bakal turun lagi.",
+    "Arik: Hujan lagi?",
+    "Ojol: Nah itu. Selokan sama kali banyak yang penuh sampah.",
+    "Arik: Kalau airnya nggak lancar bisa bahaya ya, Bang?",
+    "Ojol: Betul. Daerah sini sering kebanjiran kalau hujannya deras terus.",
+    "Arik: Semoga aja nggak sampai banjir lagi...",
+    "Ojol: Semoga. Tapi lebih baik siap-siap dari sekarang."
 };
 
 string[] babak5_banjir =
@@ -168,7 +174,7 @@ string[] babak5_klimaks =
     "Arik: Ini bukan soal umur.",
     "Arik: Ini soal kali yang kita kotori bersama.",
     "Arik: Ini bukti foto-fotonya.",
-    "Bu Tini: Ya ampun...",
+    "Pak Rizky: Ya ampun...",
     "Pak Darno: Kita yang buang sampah...",
     "Pak RT: ...Bapak harusnya dengerin kamu dari dulu.",
     "Pak RT: Ayo kita bersihin kali."
@@ -244,10 +250,6 @@ string[] babak5_ending =
         dialogAktif = null;
     }
 
-    // =======================
-    // CONTROLLER PER SCENE
-    // =======================
-
     public void Babak1_Kamar()
     {
         StartDialog(babak1_kamar);
@@ -263,21 +265,29 @@ string[] babak5_ending =
         StartDialog(babak1_sekolah);
     }
 
-    public void Babak2_Kamar()
+    public void Babak_OjolDiPasar()
     {
-        StartDialog(babak2_kamar);
+        StartDialog(babak5_OjolDiPasar);
     }
 
     public void Babak2_Sekolah()
     {
         StartDialog(babak2_sekolah);
     }
-    public void Babak2_SetelahAnjing()
+    public void Babak2_SetelahTahanBau()
     {
         StartDialog(babak3_berhasil);
     }
     public void PakAris()
     {
         StartDialog(babak2_setelah_anjing);
+    }
+    public void PakRT()
+    {
+        StartDialog(babak4_pakrt);
+    }
+    public void Babak4_Warga()
+    {
+        StartDialog(babak4_warga);
     }
 }

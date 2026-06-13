@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PakAris : MonoBehaviour
+public class ojol : MonoBehaviour
 {
-    public GameObject Oknum;
+    public GameObject Ojol;
 
     public static bool sudahNgomong = false;
     bool statusAktif = false;
@@ -28,7 +26,7 @@ public class PakAris : MonoBehaviour
         if (shouldActive != statusAktif)
         {
             statusAktif = shouldActive;
-            Oknum.SetActive(statusAktif);
+            Ojol.SetActive(statusAktif);
         }
     }
 
@@ -40,8 +38,7 @@ public class PakAris : MonoBehaviour
             GameClock.instance.currentDay == 0)
         {
             sudahNgomong = true;
-            Intro.instance.PakAris();
+            Intro.instance.Babak_OjolDiPasar();
         }
     }
-    }
-
+}
