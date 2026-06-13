@@ -6,6 +6,9 @@ public class LewatPasar : MonoBehaviour
 {
     // Start is called before the first frame update
     public Transform mc;
+    public GameObject zone;
+    public GameObject gantibbk;
+    public GameObject gantibbk1;
     public Transform tujuan;
     public GameObject button;
 
@@ -31,6 +34,9 @@ public class LewatPasar : MonoBehaviour
     }
     public void LewatPasar1()
     {
+        zone.SetActive(true);
         mc.transform.position = tujuan.transform.position;
+        gantibbk.SetActive(false);
+        gantibbk1.SetActive(false);
     }
 }
