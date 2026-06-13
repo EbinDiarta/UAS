@@ -5,15 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class SekolahManager : MonoBehaviour
 {
-        public void pulang()
-    {
-        if (Sound.instance != null)
-        {
-            Sound.instance.PlaySFX(Sound.instance.tab);
-        }
-    
-        SceneManager.LoadScene(SceneData.pulangsklh);
-    }
     public void sklh()
     {
         if (Sound.instance != null)

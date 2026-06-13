@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Game1.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/Story.unity
+    path: Assets/Scenes/banjir.unity
     guid: 315f545feca2d364d84ac58a48a14e3b
   - enabled: 1
     path: Assets/Scenes/rumah.unity
@@ -24,6 +24,6 @@ EditorBuildSettings:
     path: Assets/Scenes/sekolah.unity
     guid: c07a9d6c5d66229469625676b4a80241
   - enabled: 1
-    path: Assets/Scenes/pulangsklh.unity
-    guid: 5a1e56652bffd8342b6920546c52e11e
+    path: Assets/Scenes/stlhbanjir.unity
+    guid: 0d1d55641820c9f4b8de054c4dabf57f
   m_configObjects: {}

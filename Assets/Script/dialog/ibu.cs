@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class ibu : MonoBehaviour
 {
-    private bool sudahNgomong = false;
-
+    public static bool sudahNgomong = false;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") &&

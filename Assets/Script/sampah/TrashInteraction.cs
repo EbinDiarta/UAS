@@ -16,7 +16,7 @@ public class TrashInteraction : MonoBehaviour
         if (other.CompareTag("Trash"))
         {
             currentTrash = other.GetComponent<Trash>();
-            handButton.SetActive(true);
+            QuizManager.instance.OpenQuiz(currentTrash);
         }
     }
 
@@ -25,15 +25,6 @@ public class TrashInteraction : MonoBehaviour
         if (other.CompareTag("Trash"))
         {
             currentTrash = null;
-            handButton.SetActive(false);
-        }
-    }
-
-    public void InteractTrash()
-    {
-        if (currentTrash != null)
-        {
-            QuizManager.instance.OpenQuiz(currentTrash);
         }
     }
 }

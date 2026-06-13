@@ -4,7 +4,7 @@ public class oknum : MonoBehaviour
 {
     public GameObject Oknum;
 
-    bool sudahNgomong = false;
+    public static bool sudahNgomong = false;
     bool statusAktif = false;
 
     void Start()

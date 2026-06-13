@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class reza : MonoBehaviour
 {
-    private bool sudahNgomong = false;
+    public static bool sudahNgomong = false;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -17,7 +17,6 @@ public class reza : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-           
         }
     }
 }

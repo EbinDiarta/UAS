@@ -6,7 +6,7 @@ public class PakAris : MonoBehaviour
 {
     public static PakAris instance;
     public GameObject Oknum;
-    private bool sudahNgomong = false;
+    public static bool sudahNgomong = false;
     bool statusAktif = false;
     
         void Start()
