@@ -3881,6 +3881,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutscene: {fileID: 1777771387}
+  cutscene2: {fileID: 0}
+  zone: {fileID: 0}
   mc: {fileID: 1918751530}
   tujuan: {fileID: 1625009054}
 --- !u!1 &399683149
@@ -8777,7 +8779,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1086780930
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8787,15 +8789,15 @@ RectTransform:
   m_GameObject: {fileID: 1086780929}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.78794557, y: 0.78794557, z: 0.78794557}
+  m_LocalScale: {x: 0.7879455, y: 0.7879455, z: 0.7879455}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1560751778}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.60009766, y: -0.00048828125}
-  m_SizeDelta: {x: 515.19, y: 290.65}
+  m_AnchoredPosition: {x: -0.5999756, y: -0.0004272461}
+  m_SizeDelta: {x: 515.1897, y: 290.65002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1086780931
 MonoBehaviour:
@@ -13484,6 +13486,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mc: {fileID: 1918751530}
+  zone: {fileID: 0}
+  gantibbk: {fileID: 0}
+  gantibbk1: {fileID: 0}
   tujuan: {fileID: 1089117323}
   button: {fileID: 1500359064}
 --- !u!50 &1455645874
@@ -13836,6 +13841,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1928921169}
+  - {fileID: 1086780930}
   - {fileID: 1669710820}
   - {fileID: 544804739}
   - {fileID: 1741744150}
@@ -13849,8 +13856,6 @@ RectTransform:
   - {fileID: 877835600}
   - {fileID: 328169673}
   - {fileID: 1275703855}
-  - {fileID: 1928921169}
-  - {fileID: 1086780930}
   m_Father: {fileID: 224593980}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

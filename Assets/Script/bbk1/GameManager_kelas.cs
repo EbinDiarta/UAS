@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
-using TMPro; // Wajib ditambahkan untuk mengontrol komponen TextMeshPro via kode
+using TMPro;
+using UnityEngine.UI;
 
 public class GameManager_kelas : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class GameManager_kelas : MonoBehaviour
         public string pilihanB;
         public string pilihanC;
         public string pilihanD;
-        public string jawabanBenar; // Diisi dengan "A", "B", "C", atau "D"
+        public string jawabanBenar; 
     }
 
     [System.Serializable]
@@ -27,7 +28,6 @@ public class GameManager_kelas : MonoBehaviour
     [SerializeField] private GameObject penjelasanQuiz;   
 
     [Header("Sistem Menu Utama Papan Tulis")]
-    // TEMPAT SLOT BARU: Masukkan objek 'Menu_Utama_Papan' di sini agar tidak menutupi klik kuis!
     [SerializeField] private GameObject menuUtamaPapan; 
 
     [Header("Sistem Halaman Materi")]
@@ -43,23 +43,43 @@ public class GameManager_kelas : MonoBehaviour
     private List<SoalKuis> soalSesiAktif = new List<SoalKuis>();
     private int indeksSoalAktif = 0;
     private int jumlahJawabanBenar = 0;
-    private int indeksBabTerakhir = 0; // Menyimpan BAB yang sedang dimainkan untuk fitur Restart
+    private int indeksBabTerakhir = 0; 
+
+    // Menyimpan daftar status apakah bab tersebut sudah selesai dikerjakan
+    private List<bool> statusBabSelesai = new List<bool>();
+    // BARU: Menyimpan nilai skor per BAB untuk kalkulasi nilai akhir
+    private List<int> nilaiPerBab = new List<int>();
 
     [Header("Sistem Kuis: Referensi UI Visual")]
     [SerializeField] private GameObject panelPilihBab;
     [SerializeField] private GameObject panelGameKuis;
     [SerializeField] private GameObject panelSkor;
-    [SerializeField] private GameObject panelKonfirmasiExit; // Slot Pop-up Konfirmasi
+    [SerializeField] private GameObject panelKonfirmasiExit; 
     [Space(5)]
-    [SerializeField] private TextMeshProUGUI uiTeksSoal;
-    [SerializeField] private TextMeshProUGUI uiTeksTombolA;
-    [SerializeField] private TextMeshProUGUI uiTeksTombolB;
-    [SerializeField] private TextMeshProUGUI uiTeksTombolC;
-    [SerializeField] private TextMeshProUGUI uiTeksTombolD;
-    [SerializeField] private TextMeshProUGUI uiTeksSkorAkhir;
+    [SerializeField] private GameObject[] daftarTombolBabVisual;
+    // BARU: Daftarkan objek tombol "Button_Keluar_Bab" di sini agar bisa diatur kemunculannya
+    [SerializeField] private GameObject tombolKeluarBabUtama; 
+    // BARU: Pop-up Panel khusus untuk menampilkan Scoring Final di akhir game
+    [SerializeField] private GameObject panelScoringFinal; 
+    [Space(5)]
+    [SerializeField] private TextMeshProUGUI uiTeksSoal; 
+    [SerializeField] private TextMeshProUGUI uiTeksTombolA; 
+    [SerializeField] private TextMeshProUGUI uiTeksTombolB; 
+    [SerializeField] private TextMeshProUGUI uiTeksTombolC; 
+    [SerializeField] private TextMeshProUGUI uiTeksTombolD; 
+    [SerializeField] private TextMeshProUGUI uiTeksSkorAkhir; 
+    // BARU: Komponen teks untuk memunculkan kalkulasi rata-rata skor final
+    [SerializeField] private TextMeshProUGUI uiTeksScoringFinal; 
 
     void Start()
     {
+        // Inisialisasi status semua bab & nilai di awal game
+        for (int i = 0; i < dataKuisBab.Count; i++)
+        {
+            statusBabSelesai.Add(false);
+            nilaiPerBab.Add(0); // Set nilai awal tiap bab adalah 0
+        }
+
         MatiTotalPopUp();
     }
 
@@ -72,8 +92,6 @@ public class GameManager_kelas : MonoBehaviour
         AktifkanGrupParent(penjelasanMateri, true);
         if (penjelasanMateri != null) penjelasanMateri.SetActive(true);
         if (penjelasanQuiz != null) penjelasanQuiz.SetActive(false); 
-        
-        // Mematikan menu papan tulis utama agar tidak menghalangi halaman materi
         if (menuUtamaPapan != null) menuUtamaPapan.SetActive(false);
 
         halamanSekarang = 0; 
@@ -84,8 +102,6 @@ public class GameManager_kelas : MonoBehaviour
     {
         if (penjelasanMateri != null) penjelasanMateri.SetActive(false);
         AktifkanGrupParent(penjelasanMateri, false);
-
-        // Menghidupkan kembali menu papan tulis utama
         if (menuUtamaPapan != null) menuUtamaPapan.SetActive(true);
     }
 
@@ -132,8 +148,6 @@ public class GameManager_kelas : MonoBehaviour
         AktifkanGrupParent(penjelasanQuiz, true);
         if (penjelasanQuiz != null) penjelasanQuiz.SetActive(true);
         if (penjelasanMateri != null) penjelasanMateri.SetActive(false);
-
-        // LANGKAH B: Mematikan tombol menu utama papan tulis agar bebas dari tumpukan klik!
         if (menuUtamaPapan != null) menuUtamaPapan.SetActive(false);
 
         ResetPanelKuis();
@@ -143,17 +157,44 @@ public class GameManager_kelas : MonoBehaviour
     {
         if (penjelasanQuiz != null) penjelasanQuiz.SetActive(false);
         AktifkanGrupParent(penjelasanQuiz, false);
-
-        // LANGKAH B: Menghidupkan kembali menu papan tulis saat player keluar dari kuis
         if (menuUtamaPapan != null) menuUtamaPapan.SetActive(true);
     }
 
     public void ResetPanelKuis()
     {
-        if (panelPilihBab != null) panelPilihBab.SetActive(true);
-        if (panelGameKuis != null) panelGameKuis.SetActive(false);
-        if (panelSkor != null) panelSkor.SetActive(false);
-        if (panelKonfirmasiExit != null) panelKonfirmasiExit.SetActive(false);
+        if (panelPilihBab != null) panelPilihBab.SetActive(true); 
+        if (panelGameKuis != null) panelGameKuis.SetActive(false); 
+        if (panelSkor != null) panelSkor.SetActive(false); 
+        if (panelKonfirmasiExit != null) panelKonfirmasiExit.SetActive(false); 
+        if (panelScoringFinal != null) panelScoringFinal.SetActive(false); // Pastikan panel final tertutup
+
+        PerbaruiTampilanTombolBab();
+    }
+
+    private void PerbaruiTampilanTombolBab()
+    {
+        if (daftarTombolBabVisual == null || daftarTombolBabVisual.Length == 0) return;
+
+        int totalBabSelesai = 0;
+
+        for (int i = 0; i < daftarTombolBabVisual.Length; i++)
+        {
+            if (daftarTombolBabVisual[i] != null && i < statusBabSelesai.Count)
+            {
+                daftarTombolBabVisual[i].SetActive(!statusBabSelesai[i]);
+                
+                if (statusBabSelesai[i])
+                {
+                    totalBabSelesai++;
+                }
+            }
+        }
+
+        // BARU: Tombol Exit Bab hanya aktif/muncul jika ke-3 bab sudah selesai dikerjakan!
+        if (tombolKeluarBabUtama != null)
+        {
+            tombolKeluarBabUtama.SetActive(totalBabSelesai >= dataKuisBab.Count);
+        }
     }
 
     public void MulaiKuisBab(int indeksBab)
@@ -165,11 +206,9 @@ public class GameManager_kelas : MonoBehaviour
         }
 
         indeksBabTerakhir = indeksBab;
+        soalSesiAktif = new List<SoalKuis>(dataKuisBab[indeksBab].kumpulanSoal); 
 
-        // 1. Ambil duplikat data soal asli
-        soalSesiAktif = new List<SoalKuis>(dataKuisBab[indeksBab].kumpulanSoal);
-
-        // 2. Algoritma Pengacakan Soal (Fisher-Yates)
+        // Algoritma Pengacakan Soal
         for (int i = soalSesiAktif.Count - 1; i > 0; i--)
         {
             int r = Random.Range(0, i + 1);
@@ -181,10 +220,10 @@ public class GameManager_kelas : MonoBehaviour
         indeksSoalAktif = 0;
         jumlahJawabanBenar = 0;
 
-        if (panelPilihBab != null) panelPilihBab.SetActive(false);
-        if (panelGameKuis != null) panelGameKuis.SetActive(true);
-        if (panelSkor != null) panelSkor.SetActive(false);
-        if (panelKonfirmasiExit != null) panelKonfirmasiExit.SetActive(false);
+        if (panelPilihBab != null) panelPilihBab.SetActive(false); 
+        if (panelGameKuis != null) panelGameKuis.SetActive(true); 
+        if (panelSkor != null) panelSkor.SetActive(false); 
+        if (panelKonfirmasiExit != null) panelKonfirmasiExit.SetActive(false); 
 
         PerbaruiVisualTeksSoal();
     }
@@ -195,19 +234,19 @@ public class GameManager_kelas : MonoBehaviour
 
         SoalKuis dataSoalSekarang = soalSesiAktif[indeksSoalAktif];
 
-        if (uiTeksSoal != null) uiTeksSoal.text = dataSoalSekarang.teksSoal;
-        if (uiTeksTombolA != null) uiTeksTombolA.text = dataSoalSekarang.pilihanA;
-        if (uiTeksTombolB != null) uiTeksTombolB.text = dataSoalSekarang.pilihanB;
-        if (uiTeksTombolC != null) uiTeksTombolC.text = dataSoalSekarang.pilihanC;
-        if (uiTeksTombolD != null) uiTeksTombolD.text = dataSoalSekarang.pilihanD;
+        if (uiTeksSoal != null) uiTeksSoal.text = dataSoalSekarang.teksSoal; 
+        if (uiTeksTombolA != null) uiTeksTombolA.text = dataSoalSekarang.pilihanA; 
+        if (uiTeksTombolB != null) uiTeksTombolB.text = dataSoalSekarang.pilihanB; 
+        if (uiTeksTombolC != null) uiTeksTombolC.text = dataSoalSekarang.pilihanC; 
+        if (uiTeksTombolD != null) uiTeksTombolD.text = dataSoalSekarang.pilihanD; 
     }
 
     public void PilihJawabanKuis(string pilihanPemain)
     {
-        if (panelKonfirmasiExit != null && panelKonfirmasiExit.activeSelf) return;
+        if (panelKonfirmasiExit != null && panelKonfirmasiExit.activeSelf) return; 
         if (soalSesiAktif == null || soalSesiAktif.Count == 0) return;
 
-        string kunciJawaban = soalSesiAktif[indeksSoalAktif].jawabanBenar;
+        string kunciJawaban = soalSesiAktif[indeksSoalAktif].jawabanBenar; 
 
         if (pilihanPemain.ToUpper() == kunciJawaban.ToUpper())
         {
@@ -227,16 +266,58 @@ public class GameManager_kelas : MonoBehaviour
 
     private void TampilkanHalamanHasilSkor()
     {
-        if (panelGameKuis != null) panelGameKuis.SetActive(false);
-        if (panelSkor != null) panelSkor.SetActive(true);
-        if (panelKonfirmasiExit != null) panelKonfirmasiExit.SetActive(false);
+        if (panelGameKuis != null) panelGameKuis.SetActive(false); 
+        if (panelSkor != null) panelSkor.SetActive(true); 
+        if (panelKonfirmasiExit != null) panelKonfirmasiExit.SetActive(false); 
 
         int skorAkhir = Mathf.RoundToInt(((float)jumlahJawabanBenar / soalSesiAktif.Count) * 100f);
 
+        // Simpan skor bab ini ke dalam list memori data
+        if (indeksBabTerakhir < statusBabSelesai.Count)
+        {
+            statusBabSelesai[indeksBabTerakhir] = true;
+            nilaiPerBab[indeksBabTerakhir] = skorAkhir; 
+        }
+
         if (uiTeksSkorAkhir != null)
         {
-            uiTeksSkorAkhir.text = "SKOR KAMU:\n" + skorAkhir.ToString();
+            uiTeksSkorAkhir.text = "SKOR KAMU:\n" + skorAkhir.ToString(); 
         }
+    }
+
+    // BARU: Fungsi hitung skor gabungan total yang dipicu saat menekan tombol Exit Utama
+    public void KlikTombolExitUtamaKuisTamat()
+    {
+        if (panelPilihBab != null) panelPilihBab.SetActive(false);
+        if (panelScoringFinal != null) panelScoringFinal.SetActive(true);
+
+        int totalNilaiGabungan = 0;
+        for (int i = 0; i < nilaiPerBab.Count; i++)
+        {
+            totalNilaiGabungan += nilaiPerBab[i];
+        }
+
+        int rataRataFinal = totalNilaiGabungan / dataKuisBab.Count;
+
+        if (uiTeksScoringFinal != null)
+        {
+            // Menampilkan visual teks simulasi hitungan: (300 : 3) = 100
+            uiTeksScoringFinal.text = $"TOTAL SKOR:\n({totalNilaiGabungan} : {dataKuisBab.Count}) = {rataRataFinal}";
+        }
+    }
+
+    // BARU: Fungsi untuk benar-benar menyelesaikan game dari panel scoring final dan kembali ke menu utama papan tulis
+    public void SelesaiTotalDanKembaliKePapan()
+    {
+        // Reset status bermain agar game bisa diulang dari awal jika membuka kuis lagi nanti
+        for (int i = 0; i < statusBabSelesai.Count; i++)
+        {
+            statusBabSelesai[i] = false;
+            nilaiPerBab[i] = 0;
+        }
+
+        if (panelScoringFinal != null) panelScoringFinal.SetActive(false);
+        TutupQuiz();
     }
 
     // =======================================================
@@ -245,12 +326,12 @@ public class GameManager_kelas : MonoBehaviour
 
     public void KlikTombolExitKuis()
     {
-        if (panelKonfirmasiExit != null) panelKonfirmasiExit.SetActive(true);
+        if (panelKonfirmasiExit != null) panelKonfirmasiExit.SetActive(true); 
     }
 
     public void PilihanContinueKuis()
     {
-        if (panelKonfirmasiExit != null) panelKonfirmasiExit.SetActive(false);
+        if (panelKonfirmasiExit != null) panelKonfirmasiExit.SetActive(false); 
     }
 
     public void PilihanRestartKuis()
@@ -264,9 +345,6 @@ public class GameManager_kelas : MonoBehaviour
         indeksSoalAktif = 0;
         jumlahJawabanBenar = 0;
         ResetPanelKuis();
-        
-        // Hidupkan kembali menu utama papan tulis setelah kuis direset keluar
-        if (menuUtamaPapan != null) menuUtamaPapan.SetActive(true);
     }
 
     // ==========================================
@@ -291,7 +369,6 @@ public class GameManager_kelas : MonoBehaviour
             penjelasanMateri.transform.parent.gameObject.SetActive(false);
         }
         
-        // Memastikan menu utama papan tulis menyala di awal permainan
         if (menuUtamaPapan != null) menuUtamaPapan.SetActive(true);
     }
 }
