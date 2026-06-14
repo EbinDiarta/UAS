@@ -18,7 +18,9 @@ public class QuizManager : MonoBehaviour
     private float currentTime;
     private bool isTiming = false;
 
-    private int score = 0;
+    public static int score = 0;
+    public static int sampahSelesai = 0;
+    public int totalSampah = 30;
 
     private DragTrash currentDrag;
 
@@ -73,7 +75,6 @@ public class QuizManager : MonoBehaviour
         StartTimer();
     }
 
-
     void StartTimer()
     {
         currentTime = maxTime;
@@ -86,30 +87,41 @@ public class QuizManager : MonoBehaviour
     }
 
     void TimeUp()
+{
+    StopTimer();
+
+    sampahSelesai++;
+
+    if (sampahSelesai >= totalSampah)
     {
-        Debug.Log("WAKTU HABIS!");
-        StopTimer();
-        ResetAfterAnswer();
+        FinishGame();
+        return;
     }
+
+    ResetAfterAnswer();
+}
 
     public void CheckDrop(DragTrash dragTrash, Trash.TrashType selectedBin)
+{
+    StopTimer();
+
+    if (dragTrash.trashType == selectedBin)
     {
-        StopTimer();
-
-        if (dragTrash.trashType == selectedBin)
-        {
-            Debug.Log("BENAR");
-            score += 10;
-        }
-        else
-        {
-            Debug.Log("SALAH");
-        }
-
-        UpdateScore();
-
-        ResetAfterAnswer();
+        score += 10;
     }
+
+    sampahSelesai++;
+
+    UpdateScore();
+
+    if (sampahSelesai >= totalSampah)
+    {
+        FinishGame();
+        return;
+    }
+
+    ResetAfterAnswer();
+}
     void ResetAfterAnswer()
     {
         if (currentDrag != null && currentDrag.currentTrash != null)
@@ -129,4 +141,9 @@ public class QuizManager : MonoBehaviour
     {
         scoreText.text = "Poin : " + score;
     }
+    void FinishGame()
+{
+    Debug.Log("GAME SELESAI");
+    Debug.Log("SKOR AKHIR : " + score);
+}
 }
