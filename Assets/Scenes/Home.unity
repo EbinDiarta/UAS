@@ -1207,13 +1207,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   homeMusic: {fileID: 8300000, guid: 6d80319d152c7414a8a96647d16cfc69, type: 3}
   gameMusic: {fileID: 8300000, guid: bc9321dbe25aff048808ef049a0c4b3c, type: 3}
+  tenseMusic: {fileID: 0}
   gameOverMusic: {fileID: 8300000, guid: 497e8b4075dd57b40bffac3db9565974, type: 3}
   gameWinMusic: {fileID: 8300000, guid: a7ff4189d2b86c64e974a30bbb96945d, type: 3}
+  tab: {fileID: 8300000, guid: d8724eada2d59554b93f44fe44cc5b76, type: 3}
   salah: {fileID: 8300000, guid: 7669752a279911048800dedbe1e05e60, type: 3}
   benar: {fileID: 8300000, guid: 985190387868df84a9faa6bb032c2904, type: 3}
-  win: {fileID: 8300000, guid: a7ff4189d2b86c64e974a30bbb96945d, type: 3}
-  tab: {fileID: 8300000, guid: d8724eada2d59554b93f44fe44cc5b76, type: 3}
   jump: {fileID: 8300000, guid: f445626265b501445bfb44a1965a9c95, type: 3}
+  napas: {fileID: 0}
+  heartbeat: {fileID: 0}
+  muntah: {fileID: 0}
+  anjing: {fileID: 0}
+  langkahAir: {fileID: 8300000, guid: de7890df54950df48b98c0a4e0f8f5f3, type: 3}
 --- !u!4 &1999024185
 Transform:
   m_ObjectHideFlags: 0

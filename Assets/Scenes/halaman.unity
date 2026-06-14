@@ -433,6 +433,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8651b87862d827940b7682864ca24060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 224593981}
+  fadePanel: {fileID: 1075056955}
   mc: {fileID: 1918751530}
   tujuan: {fileID: 1459535335}
 --- !u!61 &63323844
@@ -3239,6 +3241,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8651b87862d827940b7682864ca24060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 224593981}
+  fadePanel: {fileID: 1075056955}
   mc: {fileID: 1918751530}
   tujuan: {fileID: 121879184}
 --- !u!1 &274500829
@@ -3529,6 +3533,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f001b281355b68444b9f1c1720544978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 224593981}
+  fadePanel: {fileID: 1075056955}
   mc: {fileID: 1918751530}
   tujuan: {fileID: 1058055214}
 --- !u!1 &284250335
@@ -4247,6 +4253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e1ac1bbd0c666347a44d1f2a647c9f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 224593981}
+  fadePanel: {fileID: 1075056955}
   cutscene: {fileID: 1777771387}
   cutscene2: {fileID: 80602275}
   zone: {fileID: 1325309840}
@@ -5903,6 +5911,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8651b87862d827940b7682864ca24060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 224593981}
+  fadePanel: {fileID: 1075056955}
   mc: {fileID: 1918751530}
   tujuan: {fileID: 1819180899}
 --- !u!61 &454177036
@@ -6825,6 +6835,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8651b87862d827940b7682864ca24060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 224593981}
+  fadePanel: {fileID: 1075056955}
   mc: {fileID: 1918751530}
   tujuan: {fileID: 422683359}
 --- !u!61 &667343743
@@ -9525,6 +9537,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1072373312}
+  m_CullTransparentMesh: 1
+--- !u!1 &1075056953
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1075056954}
+  - component: {fileID: 1075056956}
+  - component: {fileID: 1075056955}
+  m_Layer: 5
+  m_Name: fade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1075056954
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075056953}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1560751778}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.59998, y: -0.00012207}
+  m_SizeDelta: {x: 1918.8, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1075056955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075056953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1075056956
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075056953}
   m_CullTransparentMesh: 1
 --- !u!1 &1086500038
 GameObject:
@@ -13942,6 +14029,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8651b87862d827940b7682864ca24060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 224593981}
+  fadePanel: {fileID: 1075056955}
   mc: {fileID: 1918751530}
   tujuan: {fileID: 321623395}
 --- !u!61 &1412952843
@@ -14415,8 +14504,8 @@ Transform:
   m_GameObject: {fileID: 1439028806}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.84, y: -103.94, z: 0}
-  m_LocalScale: {x: 0.63882, y: 0.63882, z: 0.63882}
+  m_LocalPosition: {x: 5.84, y: -103.457, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -14481,6 +14570,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9168b51939a361c4fb858b9df4de0e7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 224593981}
+  fadePanel: {fileID: 1075056955}
   mc: {fileID: 1918751530}
   zone: {fileID: 1325309840}
   gantibbk: {fileID: 1777771387}
@@ -15166,6 +15257,7 @@ RectTransform:
   - {fileID: 877835600}
   - {fileID: 328169673}
   - {fileID: 1275703855}
+  - {fileID: 1075056954}
   m_Father: {fileID: 224593980}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -16463,6 +16555,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8651b87862d827940b7682864ca24060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 224593981}
+  fadePanel: {fileID: 1075056955}
   mc: {fileID: 1918751530}
   tujuan: {fileID: 1003042917}
 --- !u!61 &1710749834
@@ -17004,6 +17098,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8651b87862d827940b7682864ca24060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 224593981}
+  fadePanel: {fileID: 1075056955}
   mc: {fileID: 1918751530}
   tujuan: {fileID: 2051897300}
 --- !u!61 &1814828421

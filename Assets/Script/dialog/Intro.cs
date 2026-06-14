@@ -179,14 +179,22 @@ string[] babak5_klimaks =
     "Pak RT: ...Bapak harusnya dengerin kamu dari dulu.",
     "Pak RT: Ayo kita bersihin kali."
 };
-
-string[] babak5_ending =
+string[] babak5_setelahBanjir =
 {
-    "Reza: Pak RT turun tangan langsung.",
-    "Sari: Orang butuh bukti dulu.",
-    "Nisa: Yang penting sekarang bergerak.",
-    "Bagas: Kita yang mulai.",
-    "Arik: Masih panjang jalannya... tapi dimulai."
+    "Reza: Liat... airnya masih belum surut semua.",
+    "Sari: Kemarin rumah gue hampir kemasukan semua.",
+    "Nisa: Sekarang orang-orang baru sadar ya...",
+    "Bagas: Dulu dibilangin, nggak ada yang denger.",
+    "Reza: Pak RT aja sekarang turun langsung.",
+    "Sari: Ya karena udah kejadian.",
+    "Nisa: Tapi ya... setidaknya sekarang mulai bergerak.",
+    "Bagas: Nggak bisa nunggu lagi.",
+    "Bagas: Kita yang mulai duluan.",
+    "Arik: ...",
+    "Arik: Masih berantakan sih.",
+    "Arik: Tapi sekarang nggak sendiri lagi.",
+    "Arik: Jalannya masih panjang...",
+    "Arik: Tapi... udah dimulai."
 };
 
     private string[] dialogAktif;
@@ -289,5 +297,9 @@ string[] babak5_ending =
     public void Babak4_Warga()
     {
         StartDialog(babak4_warga);
+    }
+    public void banjir()
+    {
+        StartDialog(babak5_setelahBanjir);
     }
 }

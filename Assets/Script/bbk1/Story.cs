@@ -13,6 +13,7 @@ public class Story : MonoBehaviour
     private void Start()
     {
         bingkai.gameObject.SetActive(true);
+        fadePanel.gameObject.SetActive(true);
         StartCoroutine(BanjirCoroutine());
     }
 
@@ -31,8 +32,13 @@ public class Story : MonoBehaviour
             index++;
         }
         yield return StartCoroutine(FadeIn());
+
         bingkai.gameObject.SetActive(false);
+
         yield return StartCoroutine(FadeOut());
+
+        fadePanel.gameObject.SetActive(false);
+        Intro.instance.banjir();
     }
 
     IEnumerator FadeIn()
