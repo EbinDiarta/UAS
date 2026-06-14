@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class Sound : MonoBehaviour
 {
@@ -7,10 +8,15 @@ public class Sound : MonoBehaviour
 
     AudioSource musicSource;
     AudioSource sfxSource;
+    AudioSource banjirSource;
 
     [Header("Music")]
     public AudioClip homeMusic;
     public AudioClip gameMusic;
+    public AudioClip gamePasar;
+    public AudioClip Tegang;
+    public AudioClip Halaman;
+    public AudioClip SetelahBanjir;
     public AudioClip tenseMusic;
     public AudioClip gameOverMusic;
     public AudioClip gameWinMusic;
@@ -28,7 +34,7 @@ public class Sound : MonoBehaviour
     public AudioClip heartbeat;
     public AudioClip muntah;
     public AudioClip anjing;
-    public AudioClip langkahAir;
+    public AudioClip Banjir;
 
     void Awake()
     {
@@ -50,18 +56,21 @@ public class Sound : MonoBehaviour
     {
         AudioSource[] sources = GetComponents<AudioSource>();
 
-        if (sources.Length >= 2)
+        if (sources.Length >= 3)
         {
             musicSource = sources[0];
             sfxSource = sources[1];
+            banjirSource = sources[2];
         }
         else
         {
             musicSource = gameObject.AddComponent<AudioSource>();
             sfxSource = gameObject.AddComponent<AudioSource>();
+            banjirSource = gameObject.AddComponent<AudioSource>();
         }
 
         musicSource.loop = true;
+        banjirSource.loop = true;
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -85,7 +94,8 @@ public class Sound : MonoBehaviour
         }
     }
 
-    void PlayMusic(AudioClip clip)
+    // ================= MUSIC =================
+    public void PlayMusic(AudioClip clip)
     {
         if (clip == null) return;
 
@@ -96,6 +106,7 @@ public class Sound : MonoBehaviour
         musicSource.Play();
     }
 
+    // ================= SFX =================
     public void PlaySFX(AudioClip clip)
     {
         if (clip == null) return;
@@ -103,6 +114,47 @@ public class Sound : MonoBehaviour
         sfxSource.PlayOneShot(clip);
     }
 
+    // ================= BANJIR =================
+    public void PlayBanjir()
+    {
+        if (Banjir == null) return;
+
+        banjirSource.clip = Banjir;
+        banjirSource.loop = true;
+        banjirSource.volume = 1f;
+        banjirSource.Play();
+    }
+
+    public void StopBanjir()
+    {
+        if (banjirSource != null && banjirSource.isPlaying)
+        {
+            banjirSource.Stop();
+        }
+    }
+
+    public void StopBanjirSmooth()
+    {
+        StartCoroutine(FadeOutBanjir());
+    }
+
+    IEnumerator FadeOutBanjir()
+    {
+        float t = 0;
+        float startVolume = banjirSource.volume;
+
+        while (t < 1)
+        {
+            t += Time.deltaTime;
+            banjirSource.volume = Mathf.Lerp(startVolume, 0, t);
+            yield return null;
+        }
+
+        banjirSource.Stop();
+        banjirSource.volume = startVolume;
+    }
+
+    // ================= GAME STATE =================
     public void PlayGameOverMusic()
     {
         if (gameOverMusic == null) return;
@@ -127,4 +179,11 @@ public class Sound : MonoBehaviour
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
+    public void StopMusic()
+{
+    if (musicSource != null && musicSource.isPlaying)
+    {
+        musicSource.Stop();
+    }
+}
 }

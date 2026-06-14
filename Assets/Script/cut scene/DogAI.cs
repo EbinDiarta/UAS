@@ -20,6 +20,7 @@ public class DogAI : MonoBehaviour
     public int aktifMulaiHari = 1;
 
     private bool mengejar = false;
+    private bool sudahBunyi = false; 
     private Vector3 targetPatrol;
     private SpriteRenderer sr;
 
@@ -35,14 +36,12 @@ public class DogAI : MonoBehaviour
 
     private void Update()
     {
-        // Belum mencapai babak yang ditentukan
         if (GameClock.instance == null ||
-    GameClock.instance.currentDay < aktifMulaiHari)
-{
-    return;
-}
+            GameClock.instance.currentDay < aktifMulaiHari)
+        {
+            return;
+        }
 
-        // Jika player belum diisi
         if (player == null)
             return;
 
@@ -51,18 +50,31 @@ public class DogAI : MonoBehaviour
             player.position
         );
 
-        // Mulai mengejar
+        // ================= DETEKSI =================
         if (jarak <= jarakDeteksi)
         {
-            mengejar = true;
+            if (!mengejar)
+            {
+                mengejar = true;
+
+                if (!sudahBunyi)
+                {
+                    Sound.instance.PlaySFX(Sound.instance.anjing);
+                    sudahBunyi = true;
+                }
+            }
         }
 
-        // Berhenti mengejar dan kembali patrol
         if (jarak > jarakBerhenti)
         {
-            mengejar = false;
+            if (mengejar)
+            {
+                mengejar = false;
+                sudahBunyi = false;
+            }
         }
 
+        // ================= AKSI =================
         if (mengejar)
         {
             KejarPlayer();
@@ -105,13 +117,9 @@ public class DogAI : MonoBehaviour
             targetPatrol) < 0.2f)
         {
             if (targetPatrol == titikA.position)
-            {
                 targetPatrol = titikB.position;
-            }
             else
-            {
                 targetPatrol = titikA.position;
-            }
         }
     }
 
@@ -121,12 +129,8 @@ public class DogAI : MonoBehaviour
             return;
 
         if (arah.x > 0)
-        {
             sr.flipX = false;
-        }
         else if (arah.x < 0)
-        {
             sr.flipX = true;
-        }
     }
 }

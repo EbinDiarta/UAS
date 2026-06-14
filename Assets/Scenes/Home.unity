@@ -295,7 +295,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 58.269836, y: -386.88}
+  m_AnchoredPosition: {x: 58.27002, y: -386.88013}
   m_SizeDelta: {x: 1825.8931, y: 80.24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &745327748
@@ -685,7 +685,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 93.976685, y: 208.17444}
+  m_AnchoredPosition: {x: 93.97656, y: 208.17456}
   m_SizeDelta: {x: 533.8621, y: 947.075}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1446199477
@@ -1205,20 +1205,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9bfe53e4c8373d41870108b5d9cfce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  homeMusic: {fileID: 8300000, guid: 6d80319d152c7414a8a96647d16cfc69, type: 3}
-  gameMusic: {fileID: 8300000, guid: bc9321dbe25aff048808ef049a0c4b3c, type: 3}
-  tenseMusic: {fileID: 0}
+  homeMusic: {fileID: 8300000, guid: fb359a9a85f00ad4bb1d07d379ead8a1, type: 3}
+  gameMusic: {fileID: 8300000, guid: 3ba70b43b271b2c48b9882c4ccd7e95a, type: 3}
+  gamePasar: {fileID: 8300000, guid: 58f7c8b53816d5c4aaf6ee955561830c, type: 3}
+  Tegang: {fileID: 8300000, guid: 8ccbe1db83b95cc40b53d76f5db58962, type: 3}
+  Halaman: {fileID: 8300000, guid: 6869af1424770b64a9d99cfbd108f2e9, type: 3}
+  SetelahBanjir: {fileID: 8300000, guid: 19d67eb5a7e91504586c802f36ee2740, type: 3}
+  tenseMusic: {fileID: 8300000, guid: df350ab206373a9469cc7a37692d9251, type: 3}
   gameOverMusic: {fileID: 8300000, guid: 497e8b4075dd57b40bffac3db9565974, type: 3}
   gameWinMusic: {fileID: 8300000, guid: a7ff4189d2b86c64e974a30bbb96945d, type: 3}
-  tab: {fileID: 8300000, guid: d8724eada2d59554b93f44fe44cc5b76, type: 3}
-  salah: {fileID: 8300000, guid: 7669752a279911048800dedbe1e05e60, type: 3}
-  benar: {fileID: 8300000, guid: 985190387868df84a9faa6bb032c2904, type: 3}
+  tab: {fileID: 8300000, guid: 82f23b88cce877249a8985b287847b6e, type: 3}
+  salah: {fileID: 0}
+  benar: {fileID: 0}
   jump: {fileID: 8300000, guid: f445626265b501445bfb44a1965a9c95, type: 3}
   napas: {fileID: 0}
   heartbeat: {fileID: 0}
   muntah: {fileID: 0}
   anjing: {fileID: 0}
-  langkahAir: {fileID: 8300000, guid: de7890df54950df48b98c0a4e0f8f5f3, type: 3}
+  Banjir: {fileID: 8300000, guid: de7890df54950df48b98c0a4e0f8f5f3, type: 3}
 --- !u!4 &1999024185
 Transform:
   m_ObjectHideFlags: 0

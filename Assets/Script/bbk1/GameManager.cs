@@ -64,6 +64,8 @@ public class GameManager : MonoBehaviour
     {
         Sound.instance.PlaySFX(Sound.instance.tab);
     }
+    Sound.instance.StopMusic();
+    Sound.instance.PlayMusic(Sound.instance.Halaman);
     SceneManager.LoadScene(SceneData.halaman);
 }
     public void masukRumah()

@@ -41,7 +41,7 @@ public class sekolahtohalaman : MonoBehaviour
         mc.transform.position = tujuan.transform.position;
         
     }
- IEnumerator FadeIn()
+    IEnumerator FadeIn()
 {
     float t = 0;
 

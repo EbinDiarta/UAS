@@ -46,7 +46,7 @@ public class jmbtntopsr : MonoBehaviour
 
         zone.SetActive(false);
 
-        if (GameClock.instance.currentDay < 3)
+        if (GameClock.instance.currentDay < 2)
         {
             cutscene.SetActive(true);
             cutscene2.SetActive(false);
