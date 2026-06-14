@@ -14,9 +14,9 @@ public class Story : MonoBehaviour
     {
         bingkai.gameObject.SetActive(true);
         fadePanel.gameObject.SetActive(true);
+        StartCoroutine(BanjirCoroutine());
         Sound.instance.StopMusic();
         Sound.instance.PlayBanjir();
-        StartCoroutine(BanjirCoroutine());
     }
 
     IEnumerator BanjirCoroutine()
@@ -43,7 +43,6 @@ public class Story : MonoBehaviour
         Sound.instance.StopBanjirSmooth();
 
         Intro.instance.banjir();
-        Sound.instance.StopMusic();
         Sound.instance.PlayMusic(Sound.instance.SetelahBanjir);
     }
 
