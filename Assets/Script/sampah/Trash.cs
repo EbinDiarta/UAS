@@ -9,4 +9,12 @@ public class Trash : MonoBehaviour
     }
 
     public TrashType jenisSampah;
+
+    [HideInInspector]
+    public string trashID;
+
+    private void Awake()
+    {
+        trashID = gameObject.name.Replace("(Clone)", "");
+    }
 }
