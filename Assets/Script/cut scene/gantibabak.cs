@@ -8,9 +8,7 @@ public class GantiBabak : MonoBehaviour
     public Transform mc;
     public Transform tujuan;
 
-
     
-
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -30,3 +28,4 @@ public class GantiBabak : MonoBehaviour
         gameObject.SetActive(false);
     }
 }
+

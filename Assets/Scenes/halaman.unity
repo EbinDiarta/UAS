@@ -3649,6 +3649,7 @@ MonoBehaviour:
   timerText: {fileID: 770002314}
   startPoint: {fileID: 665350476}
   maxTime: 5
+  totalSampah: 30
 --- !u!4 &308790085
 Transform:
   m_ObjectHideFlags: 0
@@ -6012,7 +6013,7 @@ Transform:
   m_GameObject: {fileID: 454177033}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.03, y: -21.37, z: 0.5341344}
+  m_LocalPosition: {x: -9.03, y: -20.63, z: 0.5341344}
   m_LocalScale: {x: 1.3973, y: 15.283547, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
