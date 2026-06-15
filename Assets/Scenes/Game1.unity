@@ -2689,6 +2689,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneTidakAktif:
   - sekolah
+  - halaman
+  - rumah
 --- !u!1 &1669710819
 GameObject:
   m_ObjectHideFlags: 0
