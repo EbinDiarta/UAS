@@ -4385,6 +4385,7 @@ MonoBehaviour:
   sceneTidakAktif:
   - sekolah
   - halaman
+  - stlhbanjir
 --- !u!1 &1615321887
 GameObject:
   m_ObjectHideFlags: 0

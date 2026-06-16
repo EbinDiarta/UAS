@@ -2482,6 +2482,7 @@ MonoBehaviour:
   - sekolah
   - halaman
   - rumah
+  - stlhbanjir
 --- !u!1 &1669710819
 GameObject:
   m_ObjectHideFlags: 0

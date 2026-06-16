@@ -7,6 +7,8 @@ public class Story : MonoBehaviour
     public Image bingkai;
     public Image fadePanel;
     public Sprite[] tutorial;
+    public AudioSource sfxSource;
+    public AudioClip demo;
 
     private int index = 0;
 
@@ -43,6 +45,8 @@ public class Story : MonoBehaviour
         Sound.instance.StopBanjirSmooth();
 
         Intro.instance.banjir();
+        sfxSource.PlayOneShot(demo);
+        yield return new WaitForSeconds(4f);
         Sound.instance.PlayMusic(Sound.instance.SetelahBanjir);
     }
 
