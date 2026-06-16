@@ -348,12 +348,17 @@ private void TampilkanHalamanHasilSkor()
     //       POP-UP KONFIRMASI (RESTART / CONTINUE)
     // =======================================================
 
-    public void KlikTombolExitKuis()
+public void KlikTombolExitKuis()
+{
+    // INTI 1: Catat bahwa kuis hari/babak aktif saat ini SUDAH BERES
+    if (GameClock.instance != null)
     {
-        if (panelKonfirmasiExit != null) panelKonfirmasiExit.SetActive(true); 
+        PlayerPrefs.SetInt("KuisHari_" + GameClock.instance.currentDay + "_Selesai", 1);
+        PlayerPrefs.Save();
     }
 
-    public void PilihanContinueKuis()
+    if (panelKonfirmasiExit != null) panelKonfirmasiExit.SetActive(true); 
+}    public void PilihanContinueKuis()
     {
         if (panelKonfirmasiExit != null) panelKonfirmasiExit.SetActive(false); 
     }
