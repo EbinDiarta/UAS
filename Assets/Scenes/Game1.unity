@@ -1253,6 +1253,7 @@ GameObject:
   - component: {fileID: 669959661}
   - component: {fileID: 669959663}
   - component: {fileID: 669959662}
+  - component: {fileID: 669959664}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1305,6 +1306,90 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Pause: {fileID: 1286922712}
   PauseBtn: {fileID: 51885439}
+--- !u!114 &669959664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669959660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab9c58726cfcde04789d4fc1ab2a4bc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  videoPlayer: {fileID: 794067934}
+  panelHitam: {fileID: 1478824221}
+  Controller: {fileID: 1560751777}
+  durasiFade: 1
+--- !u!1 &794067933
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 794067935}
+  - component: {fileID: 794067934}
+  m_Layer: 0
+  m_Name: Video Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!328 &794067934
+VideoPlayer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794067933}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 32900000, guid: c2ab5306eff210743ba80e9162a0286a, type: 3}
+  m_TargetCameraAlpha: 1
+  m_TargetCamera3DLayout: 0
+  m_TargetCamera: {fileID: 224593979}
+  m_TargetTexture: {fileID: 0}
+  m_TimeReference: 0
+  m_TargetMaterialRenderer: {fileID: 0}
+  m_TargetMaterialProperty: <noninit>
+  m_RenderMode: 1
+  m_AspectRatio: 2
+  m_DataSource: 0
+  m_TimeUpdateMode: 2
+  m_PlaybackSpeed: 1
+  m_AudioOutputMode: 2
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
+  m_Url: 
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
+  m_PlayOnAwake: 1
+  m_SkipOnDrop: 1
+  m_Looping: 0
+  m_WaitForFirstFrame: 1
+  m_FrameReadyEventEnabled: 0
+  m_VideoShaders: []
+--- !u!4 &794067935
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794067933}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 672.39856, y: 702.7166, z: -12.650766}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1189827605
 GameObject:
   m_ObjectHideFlags: 0
@@ -2278,7 +2363,7 @@ GameObject:
   - component: {fileID: 1478824219}
   - component: {fileID: 1478824222}
   - component: {fileID: 1478824221}
-  - component: {fileID: 1478824220}
+  - component: {fileID: 1478824223}
   m_Layer: 5
   m_Name: fadein
   m_TagString: Untagged
@@ -2305,21 +2390,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.025024, y: 0.000045776}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1478824220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1478824218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67f389f707205bb4ea6fddef9839cde8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panelHitam: {fileID: 1478824221}
-  img: {fileID: 1478824218}
-  durasi: 3
 --- !u!114 &1478824221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2358,6 +2428,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1478824218}
   m_CullTransparentMesh: 1
+--- !u!114 &1478824223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478824218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f389f707205bb4ea6fddef9839cde8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelHitam: {fileID: 1478824221}
+  img: {fileID: 1478824218}
+  durasi: 1
 --- !u!1 &1560751777
 GameObject:
   m_ObjectHideFlags: 0
@@ -3548,3 +3633,4 @@ SceneRoots:
   - {fileID: 1684117187}
   - {fileID: 1960577025}
   - {fileID: 510411484}
+  - {fileID: 794067935}
