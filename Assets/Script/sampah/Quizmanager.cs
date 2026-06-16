@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
@@ -143,6 +144,7 @@ public class QuizManager : MonoBehaviour
     }
     void FinishGame()
 {
+    SceneManager.LoadScene(SceneData.ending);
     Debug.Log("GAME SELESAI");
     Debug.Log("SKOR AKHIR : " + score);
 }
