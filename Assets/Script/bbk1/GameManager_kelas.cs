@@ -69,6 +69,7 @@ public class GameManager_kelas : MonoBehaviour
     [SerializeField] private TextMeshProUGUI uiTeksTombolD; 
     [SerializeField] private TextMeshProUGUI uiTeksSkorAkhir; 
     [SerializeField] private TextMeshProUGUI uiTeksScoringFinal; 
+    public static  bool babakIniSelesai = false;
 
     void Start()
     {
@@ -84,7 +85,6 @@ public class GameManager_kelas : MonoBehaviour
         int babakAktif = PlayerPrefs.GetInt("BabakAktif", 1);
         
         // Kita periksa apakah salah satu kuis spesifik (0, 1, atau 2) sudah menyelesaikan babak aktif saat ini
-        bool babakIniSelesai = false;
         for (int i = 0; i < dataKuisBab.Count; i++)
         {
             string kunciPenyimpanan = "KuisBabak_" + i + "_Selesai";
