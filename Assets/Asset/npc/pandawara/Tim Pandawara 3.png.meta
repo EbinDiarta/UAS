@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a23039a5c58b70e4098b97116e7211f2
+guid: ffda105aed2ecae48bac4de7a4fef5a7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -84,7 +84,7 @@ TextureImporter:
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 12
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ChatGPT_Image_5_Jun_2026__21.08.02-removebg-preview_0
+      name: Tim Pandawara 3_0
       rect:
         serializedVersion: 2
-        x: 43
-        y: 296
-        width: 166
-        height: 56
+        x: 20
+        y: 256
+        width: 65
+        height: 132
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8db0c0d803420da43bb69d896d0cf820
-      internalID: 1239359625
+      spriteID: 0905f1471c965ae498decd4cc174baa1
+      internalID: -401265064
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChatGPT_Image_5_Jun_2026__21.08.02-removebg-preview_1
+      name: Tim Pandawara 3_1
       rect:
         serializedVersion: 2
-        x: 222
-        y: 296
-        width: 161
-        height: 56
+        x: 94
+        y: 256
+        width: 63
+        height: 136
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea71776ecd42ad24d845c9cef63c7985
-      internalID: -530400980
+      spriteID: 42c6e21b23b624c47b883bb4f2fb6cff
+      internalID: 578704874
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChatGPT_Image_5_Jun_2026__21.08.02-removebg-preview_2
+      name: Tim Pandawara 3_2
       rect:
         serializedVersion: 2
-        x: 396
-        y: 296
-        width: 163
-        height: 56
+        x: 170
+        y: 256
+        width: 60
+        height: 132
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1e64a24e76067849a30dcf317f88703
-      internalID: -1996434095
+      spriteID: cf7daa28be2da154e8f5c3b2f9460b17
+      internalID: -1818573970
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChatGPT_Image_5_Jun_2026__21.08.02-removebg-preview_3
+      name: Tim Pandawara 3_3
       rect:
         serializedVersion: 2
-        x: 212
-        y: 204
-        width: 183
-        height: 60
+        x: 244
+        y: 256
+        width: 60
+        height: 132
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1731a4bb2b617f64985ab997d8a8e06d
-      internalID: -2088783793
+      spriteID: 2bd59823449568d44a14b73fb65503df
+      internalID: -1245491903
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChatGPT_Image_5_Jun_2026__21.08.02-removebg-preview_4
+      name: Tim Pandawara 3_4
       rect:
         serializedVersion: 2
-        x: 112
-        y: 86
-        width: 142
-        height: 70
+        x: 314
+        y: 256
+        width: 63
+        height: 132
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47cda28be0fd06348acbb09a97070e10
-      internalID: -1868095301
+      spriteID: 9575ac548b618c54d8c3767f61ab6531
+      internalID: 1836486546
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ChatGPT_Image_5_Jun_2026__21.08.02-removebg-preview_5
+      name: Tim Pandawara 3_5
       rect:
         serializedVersion: 2
-        x: 354
-        y: 86
-        width: 144
-        height: 70
+        x: 425
+        y: 0
+        width: 85.333336
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,8 +242,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f603cc8e5fffcbd4faef86e6bd66597a
-      internalID: 1384517094
+      spriteID: dec186d180765fd44ab91422b6f052af
+      internalID: 920061566
       vertices: []
       indices: 
       edges: []
@@ -259,12 +259,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ChatGPT_Image_5_Jun_2026__21.08.02-removebg-preview_0: 1239359625
-      ChatGPT_Image_5_Jun_2026__21.08.02-removebg-preview_1: -530400980
-      ChatGPT_Image_5_Jun_2026__21.08.02-removebg-preview_2: -1996434095
-      ChatGPT_Image_5_Jun_2026__21.08.02-removebg-preview_3: -2088783793
-      ChatGPT_Image_5_Jun_2026__21.08.02-removebg-preview_4: -1868095301
-      ChatGPT_Image_5_Jun_2026__21.08.02-removebg-preview_5: 1384517094
+      Tim Pandawara 3_0: -401265064
+      Tim Pandawara 3_1: 578704874
+      Tim Pandawara 3_2: -1818573970
+      Tim Pandawara 3_3: -1245491903
+      Tim Pandawara 3_4: 1836486546
+      Tim Pandawara 3_5: 920061566
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
