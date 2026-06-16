@@ -20,7 +20,17 @@ public class Spawner : MonoBehaviour
     {
         SpawnTrash();
     }
+    public void RespawnTrash()
+{
+    GameObject[] trashes = GameObject.FindGameObjectsWithTag("Trash");
 
+    foreach (GameObject trash in trashes)
+    {
+        Destroy(trash);
+    }
+
+    SpawnTrash();
+}
     void SpawnTrash()
     {
         Transform[] spawnPoints = GetSpawnPoints();
