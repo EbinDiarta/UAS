@@ -1,39 +1,57 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GantiBabak : MonoBehaviour
 {
     public GameObject cutscene;
-    Spawner spawner;
     public Transform mc;
     public Transform tujuan;
 
-    
-    void Start()
-{
-    spawner = FindObjectOfType<Spawner>();
-}
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            StartCoroutine(GantiBabakCoroutine());
+            // Ambil data babak saat ini, jika belum ada set ke babak 1
+            int babakAktif = PlayerPrefs.GetInt("BabakAktif", 1);
+
+            // LOGIKA VALIDASI: Pastikan kuis di babak ini sudah selesai sebelum bisa ganti babak
+            if (PlayerPrefs.GetInt("KuisSelesai_Babak_" + babakAktif, 0) == 1)
+            {
+                StartCoroutine(GantiBabakCoroutine(babakAktif));
+            }
+            else
+            {
+                Debug.LogWarning("Maju ke babak berikutnya ditolak! Kuis belum selesai.");
+            }
         }
     }
 
-    IEnumerator GantiBabakCoroutine()
+    IEnumerator GantiBabakCoroutine(int babakLama)
     {
         cutscene.SetActive(true);
         yield return new WaitForSeconds(3f);
-        GameClock.instance.gantibbk();
-        if(spawner != null)
+
+        // Naikkan angka babak aktif ke babak selanjutnya
+        int babakBaru = babakLama + 1;
+        PlayerPrefs.SetInt("BabakAktif", babakBaru);
+        
+        // Reset status kuis untuk babak baru (0 = belum dikerjakan)
+        PlayerPrefs.SetInt("KuisSelesai_Babak_" + babakBaru, 0);
+        PlayerPrefs.Save();
+
+        // Panggil sistem jam/clock bawaan game Anda
+        if (GameClock.instance != null)
         {
-            spawner.RespawnTrash();
+            GameClock.instance.gantibbk();
         }
+
+        // Teleportasi player ke titik awal halaman utama
         mc.position = tujuan.position;
+        
         cutscene.SetActive(false);
+        
+        // Karena sistem melompati halaman utama secara loop, objek trigger ini diaktifkan lagi nanti 
+        // atau biarkan hancur tergantung manajemen prefab Anda.
         gameObject.SetActive(false);
     }
 }
-
