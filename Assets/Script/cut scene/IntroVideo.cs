@@ -6,6 +6,7 @@ public class IntroVideo : MonoBehaviour
 {
     public VideoPlayer videoPlayer;
     public GameObject videoObject;
+    public GameObject KataKata;
 
     public ParticleSystem particle1;
     public ParticleSystem particle2;
@@ -15,6 +16,7 @@ public class IntroVideo : MonoBehaviour
 
     void Start()
     {
+        KataKata.SetActive(false);
         particle1.Stop();
         particle2.Stop();
 
@@ -36,7 +38,8 @@ public class IntroVideo : MonoBehaviour
     IEnumerator LoadHome()
     {
         yield return new WaitForSeconds(5f);
-
+        KataKata.SetActive(true);
+        yield return new WaitForSeconds(4f);
         SceneManager.LoadScene(SceneData.home);
     }
 }

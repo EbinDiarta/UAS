@@ -25,9 +25,12 @@ public class FadeIn1 : MonoBehaviour
 }
     void Start()
     {
-        StartCoroutine(FadeIn()); // dari hitam ke transparan
     }
+    public void fade()
+    {
+        StartCoroutine(FadeIn()); // dari hitam ke transparan
 
+    }
     IEnumerator FadeIn()
     {
         img.SetActive(true);

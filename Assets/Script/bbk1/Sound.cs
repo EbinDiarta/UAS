@@ -86,11 +86,6 @@ public class Sound : MonoBehaviour
             case "Select":
                 PlayMusic(homeMusic);
                 break;
-
-            case "Game1":
-            case "Game2":
-                PlayMusic(gameMusic);
-                break;
         }
     }
 
